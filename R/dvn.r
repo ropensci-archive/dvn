@@ -1,8 +1,3 @@
-#!bin/usr/R
-# Thomas J. Leeper
-# Aarhus University
-# January 30, 2012
-
 dvQuery <- function(verb, query = NULL, dv = "https://dvn.iq.harvard.edu/dvn/", browser=FALSE){
 	# workhorse query function
 	if(!verb %in% c("metadataSearchFields", "metadataSearch", "metadataFormatsAvailable", "metadata", "downloadInfo", "download"))
@@ -156,6 +151,8 @@ dvDownloadInfo <- function(fileid, dv = "https://dvn.iq.harvard.edu/dvn/", brows
 		x <- xpathApply(xmlParse(xml),"//accessRestrictions")
 		if(length(x)>0)
 			details$accessRestrictions <- xmlValue(x[[1]])
+		else
+			details$accessRestrictions <- ""
 		
 		details$accessServicesSupported <- data.frame(matrix(nrow=length(services),ncol=4))
 		names(details$accessServicesSupported) <- c("serviceName","serviceArgs","contentType","serviceDesc")
@@ -173,9 +170,9 @@ dvDownloadInfo <- function(fileid, dv = "https://dvn.iq.harvard.edu/dvn/", brows
 dvDownload <- function(fileid, query=NULL, dv = "https://dvn.iq.harvard.edu/dvn/", browser=FALSE){
 	if(is.null(fileid))
 		stop("Must specify fileId")
-	direct <- dvDownloadInfo(fileid)$directAccess
-	if(direct=="false")
-		stop("Data cannot be accessed directly...try using URI from dvExtractFileIds(dvMetadata())")
+	direct <- dvDownloadInfo(fileid)
+	if(direct$directAccess=="false")
+		stop("Data cannot be accessed directly (",direct$accessRestrictions,")...try using URI from dvExtractFileIds(dvMetadata())")
 	if(is.null(query)){
 		xml <- dvQuery(verb = "download", query = fileid, dv = dv, browser=browser)
 		return(xml)
