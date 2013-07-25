@@ -4,7 +4,7 @@
 \description{Retrieve metadata for a dataverse record, using its object ID.}
 \usage{
 dvMetadata(objectid, format.type = NULL, include = NULL, exclude = NULL,
-			dv = "https://dvn.iq.harvard.edu/dvn/", browser = FALSE)
+			dv = "https://dvn.iq.harvard.edu/dvn/", browser = FALSE, ...)
 }
 \arguments{
   \item{objectid}{A dataverse object ID.}
@@ -13,6 +13,7 @@ dvMetadata(objectid, format.type = NULL, include = NULL, exclude = NULL,
   \item{exclude}{An optional character string specifying what metadata to exclude from the response.}
   \item{dv}{An optional character string specifying the Dataverse to query. Default is the Harvard IQSS Dataverse.}
   \item{browser}{A logical specifying whether the query should be executed in a web browser. Default is \code{FALSE}.}
+  \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvQuery}}.}
 }
 %\details{}
 \value{An XML data structure containing metadata for the specified dataverse record.}
