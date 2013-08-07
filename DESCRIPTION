@@ -4,7 +4,7 @@ Date: 2013-06-30
 Title: Access to The Dataverse Network API
 Author: Thomas J. Leeper
 Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
-Depends: bitops, RCurl, XML
+Imports: RCurl, XML
 Description: Provides access to The Dataverse Network API via the RCurl package, enabling access to archived data (and metadata), along with a number of functions to translate responses to API calls into R data structures using the XML package.
 License: GPL-2
 URL: http://thomasleeper.com/software.html

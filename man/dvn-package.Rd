@@ -29,6 +29,7 @@ Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
 %\seealso{}
 \examples{
 # A basic workflow
+require(RCurl)
 if(url.exists("https://dvn.iq.harvard.edu/dvn/api/metadataSearchFields",
 	followlocation=TRUE, ssl.verifypeer = FALSE, ssl.verifyhost = FALSE)){
 	## find available search fields
