@@ -7,4 +7,5 @@ Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
 Imports: RCurl, XML
 Description: Provides access to The Dataverse Network API via the RCurl package, enabling access to archived data (and metadata), along with a number of functions to translate responses to API calls into R data structures using the XML package.
 License: GPL-2
-URL: http://thomasleeper.com/software.html
+URL: https://github.com/leeper/dvn
+BugReports: https://github.com/leeper/dvn/issues
