@@ -1,7 +1,7 @@
 dvDownload <- function(fileid, query=NULL, dv = "https://dvn.iq.harvard.edu/dvn/", browser=FALSE, ...){
 	if(is.null(fileid))
 		stop("Must specify fileId")
-	direct <- dvDownloadInfo(fileid)
+	direct <- dvDownloadInfo(fileid, dv = dv)
 	if(is.null(direct))
 		stop("downloadInfo unavailable")
 	if(direct$directAccess=="false")
