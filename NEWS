@@ -1,4 +1,12 @@
+# CHANGES TO dvn 0.3 #
+
+## BUG FIXES ##
+
+* Fixed a bug in `dvDownload` that failed to propogate the correct dataverse to `dvDownloadInfo` (h/t Egon Willighagen)
+
+
 # CHANGES TO dvn 0.2 #
 
 ## BUG FIXES ##
+
 * Removed SSL verification from `dvQuery` to prevent errors due to a new site certificate for DVN (released 2013-06-27). May be restored in a future version once RCurl stops producing an error.
