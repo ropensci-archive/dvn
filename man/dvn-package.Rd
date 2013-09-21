@@ -3,7 +3,11 @@
 \alias{dvn}
 \docType{package}
 \title{Access to The Dataverse Network APIs}
-\description{Provides access to The Dataverse Network Data Sharing and Data Deposit APIs via the RCurl package. The Data Sharing API provides access to archived data (and metadata). The dvn package provides a number of functions to translate API responses into R data structures using the XML package. The Data Deposit API provides the ability to create and modify Dataverse studies. Support for these features is in ongoing development.}
+\description{Provides access to The Dataverse Network Data Sharing and Data Deposit APIs via the RCurl package.
+
+The Data Sharing API provides access to archived data (and metadata). The dvn package provides a number of functions to translate API responses into R data structures using the XML package.
+
+The Data Deposit API provides the ability to create and modify Dataverse studies. Support for these features is in ongoing development.}
 \details{
 \tabular{ll}{
 Package: \tab dvn\cr
