@@ -1,5 +1,5 @@
-\name{dvUserStudies}
-\alias{dvUserStudies}
+\name{dvStudyStatement}
+\alias{dvStudyStatement}
 \title{Obtain a list of study contents}
 \description{}
 \usage{
