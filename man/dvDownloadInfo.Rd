@@ -6,7 +6,7 @@
 dvDownloadInfo(fileid, dv = getOption('dvn'), browser = FALSE, ...)
 }
 \arguments{
-  \item{fileid}{A character string specifying a dataverse fileId for a file contained in a dataverse reocrd. This is distinct from the \code{objectid} that identifies the entire dataverse records.}
+  \item{fileid}{A character string specifying a dataverse fileId for a file contained in a dataverse record. This is distinct from the \code{objectid} that identifies the entire dataverse records.}
   \item{dv}{An optional character string specifying the Dataverse to query. Default is the Harvard IQSS Dataverse.}
   \item{browser}{A logical specifying whether the query should be executed in a web browser. Default is \code{FALSE}.}
   \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvQuery}}.}
