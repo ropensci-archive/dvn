@@ -1,4 +1,4 @@
-dvSearch <- function(query, dv = "https://dvn.iq.harvard.edu/dvn/", browser=FALSE, ...){
+dvSearch <- function(query, dv = getOption('dvn'), browser=FALSE, ...){
 	if(is.null(query))
 		stop("Must specify query as named list or character string")
 	else{

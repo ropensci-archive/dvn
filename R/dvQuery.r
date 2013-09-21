@@ -1,4 +1,4 @@
-dvQuery <- function(verb, query = NULL, dv = "https://dvn.iq.harvard.edu/dvn/", browser=FALSE, ...){
+dvQuery <- function(verb, query = NULL, dv = getOption('dvn'), browser=FALSE, ...){
 	# workhorse query function
 	if(!verb %in% c("metadataSearchFields", "metadataSearch", "metadataFormatsAvailable", "metadata", "downloadInfo", "download"))
 		stop("API query verb not recognized")

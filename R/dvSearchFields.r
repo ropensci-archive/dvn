@@ -1,4 +1,4 @@
-dvSearchFields <- function(dv = "https://dvn.iq.harvard.edu/dvn/", browser=FALSE, ...){
+dvSearchFields <- function(dv = getOption('dvn'), browser=FALSE, ...){
 	xml <- dvQuery(verb = "metadataSearchFields", query = NULL, dv = dv, browser=browser, ...)
 	if(is.null(xml))
 		invisible(NULL)

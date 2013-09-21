@@ -1,4 +1,4 @@
-dvDownloadInfo <- function(fileid, dv = "https://dvn.iq.harvard.edu/dvn/", browser=FALSE, ...){
+dvDownloadInfo <- function(fileid, dv = getOption('dvn'), browser=FALSE, ...){
 	if(is.null(fileid))
 		stop("Must specify fileId")
 	xml <- dvQuery(verb = "downloadInfo", query = fileid, dv = dv, browser=browser, ...)

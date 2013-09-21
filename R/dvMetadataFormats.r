@@ -1,4 +1,4 @@
-dvMetadataFormats <- function(objectid, dv = "https://dvn.iq.harvard.edu/dvn/", browser=FALSE, ...){
+dvMetadataFormats <- function(objectid, dv = getOption('dvn'), browser=FALSE, ...){
 	xml <- dvQuery(verb = "metadataFormatsAvailable", query = objectid, dv = dv, browser=browser, ...)
 	if(is.null(xml))
 		invisible(NULL)

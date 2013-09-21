@@ -1,5 +1,5 @@
 dvMetadata <- function(objectid, format.type=NULL, include=NULL, exclude=NULL,
-						dv = "https://dvn.iq.harvard.edu/dvn/", browser=FALSE, ...){
+						dv = getOption('dvn'), browser=FALSE, ...){
 	if(is.null(format.type)){
 		query <- objectid
 		if(!is.null(include))
