@@ -1,12 +1,10 @@
 # CHANGES TO dvn 0.3 #
 
 ## SIGNIFICANT USER-VISIBLE CHANGES ##
-
+* Support for the Data Deposit API has been added in the form of a `dvDepositQuery` workhorse function and some wrappers (`dvServiceDoc`, `dvUserStudies`, `dvStudyAtom`, and `dvStudyStatement`).
 * The default dataverse (Harvard IQSS Dataverse) is now specified as a global `option`, which can be user-redefined.
-* Support for the Data Deposit API has been added in the form of a `dvDepositQuery` workhorse function and some wrappers.
 
 ## BUG FIXES ##
-
 * Fixed a bug in `dvDownload` that failed to propogate the correct dataverse to `dvDownloadInfo` (h/t Egon Willighagen)
 
 
