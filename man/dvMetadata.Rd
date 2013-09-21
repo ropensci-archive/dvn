@@ -4,7 +4,7 @@
 \description{Retrieve metadata for a dataverse record, using its object ID.}
 \usage{
 dvMetadata(objectid, format.type = NULL, include = NULL, exclude = NULL,
-			dv = "https://dvn.iq.harvard.edu/dvn/", browser = FALSE, ...)
+			dv = getOption('dvn'), browser = FALSE, ...)
 }
 \arguments{
   \item{objectid}{A dataverse object ID.}

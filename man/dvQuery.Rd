@@ -1,9 +1,9 @@
 \name{dvQuery}
 \alias{dvQuery}
-\title{Execute an API Query}
-\description{Primarily an internal function for executing API calls.}
+\title{Execute a Data Sharing API Query}
+\description{Primarily an internal function for executing Data Sharing API calls.}
 \usage{
-dvQuery(verb, query = NULL, dv = "https://dvn.iq.harvard.edu/dvn/", browser = FALSE, ...)
+dvQuery(verb, query = NULL, dv = getOption('dvn'), browser = FALSE, ...)
 }
 \arguments{
   \item{verb}{An API verb of \code{metadataSearchFields}, \code{metadataSearch}, \code{metadataFormatsAvailable}, \code{metadata}, \code{downloadInfo}, \code{download}.}

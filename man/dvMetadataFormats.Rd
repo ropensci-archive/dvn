@@ -3,7 +3,7 @@
 \title{Retrieve available metadata formats}
 \description{Retrieve the available metadata formats that can be returned for a particular dataverse record.}
 \usage{
-dvMetadataFormats(objectid, dv = "https://dvn.iq.harvard.edu/dvn/", browser = FALSE, ...)
+dvMetadataFormats(objectid, dv = getOption('dvn'), browser = FALSE, ...)
 }
 \arguments{
   \item{objectid}{A dataverse object ID.}

@@ -3,7 +3,7 @@
 \title{Retrieve file download information}
 \description{Retrieve download information for a dataverse file.}
 \usage{
-dvDownloadInfo(fileid, dv = "https://dvn.iq.harvard.edu/dvn/", browser = FALSE, ...)
+dvDownloadInfo(fileid, dv = getOption('dvn'), browser = FALSE, ...)
 }
 \arguments{
   \item{fileid}{A character string specifying a dataverse fileId for a file contained in a dataverse reocrd. This is distinct from the \code{objectid} that identifies the entire dataverse records.}

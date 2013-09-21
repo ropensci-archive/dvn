@@ -3,7 +3,7 @@
 \title{Search a Dataverse}
 \description{Search a Dataverse by keyword(s) in one or more metadata fields.}
 \usage{
-dvSearch(query, dv = "https://dvn.iq.harvard.edu/dvn/", browser = FALSE, ...)
+dvSearch(query, getOption('dvn'), browser = FALSE, ...)
 }
 \arguments{
   \item{query}{Either a list of named search parameters or an appropriately formatted character string of search parameters. Search parameters can be retrieved via \code{\link{dvSearchFields}}.}

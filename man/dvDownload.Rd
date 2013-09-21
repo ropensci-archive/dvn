@@ -3,7 +3,7 @@
 \title{Download a file}
 \description{Download a dataverse file into R or in a web browser}
 \usage{
-dvDownload(fileid, query = NULL, dv = "https://dvn.iq.harvard.edu/dvn/", browser = FALSE, ...)
+dvDownload(fileid, query = NULL, dv = getOption('dvn'), browser = FALSE, ...)
 }
 \arguments{
   \item{fileid}{A character string specifying a dataverse fileId for a file contained in a dataverse reocrd. This is distinct from the \code{objectid} that identifies the entire dataverse records.}

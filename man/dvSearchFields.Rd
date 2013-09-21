@@ -3,7 +3,7 @@
 \title{Lookup available search fields}
 \description{Lookup names and descriptions of search fields available via the API}
 \usage{
-dvSearchFields(dv = "https://dvn.iq.harvard.edu/dvn/", browser = FALSE, ...)
+dvSearchFields(dv = getOption('dvn'), browser = FALSE, ...)
 }
 \arguments{
   \item{dv}{An optional character string specifying the Dataverse to query. Default is the Harvard IQSS Dataverse.}
