@@ -1,7 +1,7 @@
 \name{dvUserStudies}
 \alias{dvUserStudies}
-\title{Obtain a list of studies in a named Dataverse}
-\description{}
+\title{Studies in a Dataverse}
+\description{Use Data Deposit API to obtain list of studies in a named Dataverse.}
 \usage{
 dvUserStudies(user, pwd, dvname, dv=getOption('dvn'), browser=FALSE, ...)
 }

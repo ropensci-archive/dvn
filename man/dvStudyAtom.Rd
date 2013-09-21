@@ -1,7 +1,7 @@
 \name{dvStudyAtom}
 \alias{dvStudyAtom}
-\title{Obtain an Atom document for a study}
-\description{}
+\title{Obtain a study's Atom document}
+\description{Use Data Deposit API to obtain an Atom document for a study.}
 \usage{
 dvStudyAtom(user, pwd, objectid, dv=getOption('dvn'), browser=FALSE, ...)
 }

@@ -1,7 +1,7 @@
 \name{dvServiceDoc}
 \alias{dvServiceDoc}
-\title{Obtain a Dataverse Deposit Service Document}
-\description{}
+\title{Get Dataverse Service Document}
+\description{Obtain a Data Deposit API Service Document}
 \usage{
 dvServiceDoc(user, pwd, dv=getOption('dvn'), browser=FALSE, ...)
 }

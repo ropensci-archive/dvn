@@ -1,7 +1,7 @@
 \name{dvStudyStatement}
 \alias{dvStudyStatement}
-\title{Obtain a list of study contents}
-\description{}
+\title{Obtain a study statement}
+\description{Use Data Deposit API to obtain a listing of study contents.}
 \usage{
 dvStudyStatement(user, pwd, objectid, dv=getOption('dvn'), browser=FALSE, ...)
 }
