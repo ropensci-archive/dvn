@@ -35,9 +35,7 @@ Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
 %\seealso{}
 \examples{
 # A basic Data Sharing API workflow
-require(RCurl)
-if(url.exists("https://dvn.iq.harvard.edu/dvn/api/metadataSearchFields",
-	followlocation=TRUE, ssl.verifypeer = FALSE, ssl.verifyhost = FALSE)){
+\dontrun{
 	## find available search fields
 	fields <- dvSearchFields()
 	
