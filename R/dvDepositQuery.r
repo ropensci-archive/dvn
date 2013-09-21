@@ -26,7 +26,7 @@ dvDepositQuery <- function(query, user, pwd, dv=getOption('dvn'), browser=FALSE,
         return(xml)
     }
     else if(httpverb=='POST'){
-        # POST to handle dvCreateStudy
+        # POST to handle dvCreateStudy and dvAddFile
         h <- basicTextGatherer()
         xml <- curlPerform(url = url, followlocation = TRUE, userpwd=userpwd,
                     #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
@@ -45,7 +45,7 @@ dvDepositQuery <- function(query, user, pwd, dv=getOption('dvn'), browser=FALSE,
         return(h$value())
     }
     else if(httpverb=='DELETE'){
-        # DELETE to handle dvDeleteStudy
+        # DELETE to handle dvDeleteStudy and dvDeleteFile
         h <- basicTextGatherer()
         xml <- curlPerform(url = url, followlocation = TRUE, userpwd=userpwd, customrequest = 'DELETE',
                     #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
