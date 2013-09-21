@@ -17,7 +17,9 @@ dvReleaseStudy(user, pwd, dvname, xmlfile, dv=getOption('dvn'), browser=FALSE, .
 %\details{}
 \value{A character string containing an XML data structure (a Study Atom).}
 \references{
-\href{http://swordapp.github.io/SWORDv2-Profile/SWORDProfile.html#protocoloperations_creatingresource_entry}{Atom entry template}
+\href{http://swordapp.github.io/SWORDv2-Profile/SWORDProfile.html#protocoloperations_creatingresource_entry}{Atom entry specification}
+\href{https://github.com/IQSS/dvn/blob/develop/tools/scripts/data-deposit-api/atom-entry-study.xml}{Atom entry template 1}
+\href{https://github.com/IQSS/dvn/blob/develop/tools/scripts/data-deposit-api/atom-entry-study2.xml}{Atom entry template 2}
 }
 \author{Thomas J. Leeper}
 %\note{}
