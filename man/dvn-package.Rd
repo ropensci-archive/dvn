@@ -58,5 +58,20 @@ if(url.exists("https://dvn.iq.harvard.edu/dvn/api/metadataSearchFields",
 	data <- dvDownload(files$fileId[1])
 	}
 }
+\dontrun{
+    ## use basic Data Deposit API functions:
+    myuser <- 'username'
+    password <- 'password'
+    # retrieve my Dataverses and their terms of use
+    dvServiceDoc(myuser,password)
+    
+    # retrieve studies for one of my dataverses
+    dvUserStudies(myuser,password,'leeper')
+    
+    # retrieve a 'Study Atom', providing the citation for a study
+    dvStudyAtom(myuser,password,'hdl:1902.1/17864')
+    
+    # retrieve a 'Study Statement' providing files stored in a study
+    dvStudyStatement(myuser,password,'hdl:1902.1/17864')
 }
-% Add something here for Data Deposit API (in a \dontrun)
+}
