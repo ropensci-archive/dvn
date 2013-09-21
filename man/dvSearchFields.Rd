@@ -20,7 +20,9 @@ dvSearchFields(dv = getOption('dvn'), browser = FALSE, ...)
 \code{\link{dvSearch}}
 }
 \examples{
+\dontrun{
 fields <- dvSearchFields()
+}
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }

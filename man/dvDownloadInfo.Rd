@@ -21,7 +21,9 @@ dvDownloadInfo(fileid, dv = getOption('dvn'), browser = FALSE, ...)
 \code{\link{dvDownload}}
 }
 \examples{
+\dontrun{
 info <- dvDownloadInfo("9956")
+}
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }

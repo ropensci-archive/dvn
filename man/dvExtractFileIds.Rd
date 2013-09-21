@@ -18,8 +18,10 @@ dvExtractFileIds(xml)
 \code{\link{dvMetadata}}
 }
 \examples{
+\dontrun{
 xml <- dvMetadata("hdl:1902.1/17218")
 dvExtractFileIds(xml)
+}
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }

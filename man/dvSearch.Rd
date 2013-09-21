@@ -20,8 +20,10 @@ dvSearch(query, dv = getOption('dvn'), browser = FALSE, ...)
 \code{\link{dvSearchFields}}
 }
 \examples{
+\dontrun{
 search1 <- dvSearch("authorName:leeper")
 search2 <- dvSearch(list(title="Denmark"))
+}
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }

@@ -19,7 +19,9 @@ dvMetadataFormats(objectid, dv = getOption('dvn'), browser = FALSE, ...)
 
 %\seealso{}
 \examples{
+\dontrun{
 formats <- dvMetadataFormats("hdl:1902.1/17218")
+}
 }
 %\keyword{ ~kwd1 }
 %\keyword{ ~kwd2 }
