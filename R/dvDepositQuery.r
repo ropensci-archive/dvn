@@ -32,6 +32,16 @@ dvDepositQuery <- function(query, user, pwd, dv=getOption('dvn'), browser=FALSE,
                     #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
                     ssl.verifypeer = FALSE, ssl.verifyhost = FALSE, writefunction = h$update, verbose=TRUE, ...)
                     #cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
+        return(list(xml,h$value()))
+    }
+    else if(httpverb=='PUT'){
+        # PUT to handle dvEditStudy
+        h <- basicTextGatherer()
+        xml <- curlPerform(url = url, followlocation = TRUE, userpwd=userpwd,
+                    #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
+                    ssl.verifypeer = FALSE, ssl.verifyhost = FALSE, writefunction = h$update,
+                    verbose=TRUE, upload=TRUE, ...)
+                    #cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
         return(h$value())
     }
     else if(httpverb=='DELETE'){
