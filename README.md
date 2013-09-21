@@ -1,4 +1,4 @@
-## Access to the Dataverse Network API from R
+## Access to the Dataverse Network APIs from R
 
 The goal of the **dvn** package is to integrate public data sharing into the workflow of reproducible research. As such, **dvn** provides access to both the [Data Sharing API](http://guides.thedata.org/node/13328) and the [Data Deposit API](http://devguide.thedata.org/features/api/data-deposit/) for the [Dataverse Network](http://thedata.org/) online data repository system. The package enables searches of any public dataverse, returning study and file metadata. Limited support is also provided for data download, when terms of use allow direct download of public data.
 
