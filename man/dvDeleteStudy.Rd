@@ -16,7 +16,7 @@ dvDeleteStudy(user, pwd, objectid, dv=getOption('dvn'), browser=FALSE, ...)
 \details{
 If a study has been created but not released, \code{dvDeleteStudy} will delete it permanently.
 
-If a study has been created and released, \code{dvDeleteStudy} will deaccession it (i.e., reverse the release). Currently, a previously released study cannot be deleted. Attempting to delete a deaccessioned study will produce an error.
+If a study has been created and released, \code{dvDeleteStudy} will deaccession it (i.e., reverse the release).  A released study can be \dQuote{deaccessioned} (replacing its public record with a publicly visible record about its previous release) using \code{dvDeleteStudy}. Currently, a previously released study cannot be deleted. Attempting to delete a deaccessioned study will produce an error.
 }
 \value{If successful, the response is an empty character string.}
 %\references{}
