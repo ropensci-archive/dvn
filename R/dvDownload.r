@@ -5,7 +5,7 @@ dvDownload <- function(fileid, query=NULL, dv = getOption('dvn'), browser=FALSE,
 	if(is.null(direct))
 		stop("downloadInfo unavailable")
 	if(direct$directAccess=="false")
-		stop(direct$accessRestrictions,"\nData cannot be accessed directly...try using URI from dvExtractFileIds(dvMetadata())")
+		stop(direct$accessRestrictions,"\nData cannot be accessed directly...try browsing URI from dvExtractFileIds(dvMetadata())")
 	if(is.null(query)){
 		xml <- dvQuery(verb = "download", query = fileid, dv = dv, browser=browser)
 		return(xml)
