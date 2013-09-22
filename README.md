@@ -6,6 +6,15 @@ Support for the Data Deposit API is still in ongoing development. This API allow
 
 **dvn** defaults to providing access to the [Harvard Dataverse Network](http://dvn.iq.harvard.edu/), but accommodates any publicly available dataverse. This can be changed in each function call or in globally using `options(dvn = 'https://thedata.harvard.edu/')` for any valid Dataverse Network.
 
+### Installation
+
+You can find a stable release on [CRAN](http://cran.r-project.org/web/packages/dvn/index.html), or install the latest development version from GitHub using [Hadley's](http://had.co.nz/) [devtools](http://cran.r-project.org/web/packages/devtools/index.html) package:
+```
+# install.packages("devtools")
+library(devtools)
+install_github(repo = "dvn", username = "leeper")
+```
+
 ### Functions for the Data Sharing API
 * `dvSearchFields`, to provide help with searching via the Data Sharing API
 * `dvSearch`, to search public dataverses
