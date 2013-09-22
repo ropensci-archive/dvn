@@ -1,7 +1,7 @@
-dvAddFile <- function(user, pwd, objectid, filename, dv=getOption('dvn'), browser=FALSE, size=1e7, ...){
+dvAddFile <- function(user, pwd, objectid, filename, filesize=1e7, dv=getOption('dvn'), browser=FALSE, ...){
     xml <- dvDepositQuery(  query=paste('edit-media/study/',objectid,sep=''), user=user, pwd=pwd, dv=dv, browser=browser,
                             httpverb='POST', #upload=TRUE,
-                            postfields=readBin(filename,what='raw',size),
+                            postfields=readBin(filename,what='raw',filesize),
                             httpheader=c(   'Content-Disposition'=paste('attachment; filename',filename,sep='='),
                                             'Content-Type'='application/zip',
                                             'Packaging'='http://purl.org/net/sword/package/SimpleZip'))

@@ -11,7 +11,7 @@ dvDeleteStudy(user, pwd, objectid, dv=getOption('dvn'), browser=FALSE, ...)
   \item{objectid}{A character string containing the id for a dataverse study (a handle). This could be returned from \code{\link{dvUserStudies}}, \code{\link{dvCreateStudy}}, (or, \code{\link{dvSearch}}, from the Data Sharing API).}
   \item{dv}{An optional character string specifying the Dataverse to query. Default is the Harvard IQSS Dataverse.}
   \item{browser}{A logical specifying whether the query should be executed in a web browser. Default is \code{FALSE}.}
-  \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvQuery}}.}
+  \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvDepositQuery}}.}
 }
 \details{
 If a study has been created but not released, \code{dvDeleteStudy} will delete it permanently.

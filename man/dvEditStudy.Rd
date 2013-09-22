@@ -1,9 +1,9 @@
 \name{dvEditStudy}
 \alias{dvEditStudy}
 \title{Edit a study}
-\description{Use Data Deposit API to edit a study.}
+\description{Use Data Deposit API to edit a study's metadata.}
 \usage{
-dvReleaseStudy(user, pwd, objectid, xmlfile, dv=getOption('dvn'), browser=FALSE, ...)
+dvEditStudy(user, pwd, objectid, xmlfile, dv=getOption('dvn'), browser=FALSE, ...)
 }
 \arguments{
   \item{user}{A character string containing a dataverse username.}
@@ -12,16 +12,21 @@ dvReleaseStudy(user, pwd, objectid, xmlfile, dv=getOption('dvn'), browser=FALSE,
   \item{xmlfile}{The path to an XML file containing an Atom entry, which specifies the metadata necessary to create the study. See references for an example.}
   \item{dv}{An optional character string specifying the Dataverse to query. Default is the Harvard IQSS Dataverse.}
   \item{browser}{A logical specifying whether the query should be executed in a web browser. Default is \code{FALSE}.}
-  \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvQuery}}.}
+  \item{...}{Optionally, additional arguments passed to \code{curlPerform} via \code{\link{dvDepositQuery}}.}
 }
 %\details{}
-\value{A character string containing an XML data structure (a Study Atom).}
+\value{A character string containing an XML data structure (a Study Atom). If successful, the request will reflect the contents of \code{xmlfile}. See \code{\link{dvStudyAtom}}.}
 \references{
-\href{http://swordapp.github.io/SWORDv2-Profile/SWORDProfile.html#protocoloperations_creatingresource_entry}{Atom entry specification}
+\href{http://swordapp.github.io/SWORDv2-Profile/SWORDProfile.html\#protocoloperations_creatingresource_entry}{Atom entry specification}
 \href{https://github.com/IQSS/dvn/blob/develop/tools/scripts/data-deposit-api/atom-entry-study.xml}{Atom entry template 1}
 \href{https://github.com/IQSS/dvn/blob/develop/tools/scripts/data-deposit-api/atom-entry-study2.xml}{Atom entry template 2}
 }
 \author{Thomas J. Leeper}
 %\note{}
-%\seealso{}
+\seealso{
+\code{\link{dvAddFile}}
+\code{\link{dvCreateStudy}}
+\code{\link{dvReleaseStudy}}
+\code{\link{dvDeleteStudy}}
+}
 %\examples{}
