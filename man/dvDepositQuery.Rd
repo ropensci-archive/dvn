@@ -3,7 +3,7 @@
 \title{Execute a Data Deposit API Query}
 \description{Primarily an internal function for executing Data Deposit API calls.}
 \usage{
-dvDepositQuery(query, user, pwd, dv=getOption('dvn'), browser=FALSE, apiversion='v1', ...)
+dvDepositQuery(query, user, pwd, dv=getOption('dvn'), browser=FALSE, apiversion='v1', fulluri=NULL, ...)
 }
 \arguments{
   \item{query}{A character string specifying query parameters.}
