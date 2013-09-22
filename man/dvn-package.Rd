@@ -48,13 +48,11 @@ Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
 	## retrieve metadata in an available format and find fileId(s)
 	files <- dvExtractFileIds(dvMetadata(search$objectid[1], format.type=formats$formatName[1]))
 	
-	\dontrun{
 	## optional search for information about data download
 	info <- dvDownloadInfo(files$fileId[1])
 	
 	## download the data, if allowed by Terms of Use
 	data <- dvDownload(files$fileId[1])
-	}
 }
 \dontrun{
     ## use basic Data Deposit API functions:
