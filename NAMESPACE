@@ -1,3 +1,3 @@
 exportPattern("^[[:alpha:]]+")
-importFrom(RCurl, getURL, url.exists)
+importFrom(RCurl, getURL, url.exists, curlPerform, basicTextGatherer)
 importFrom(XML, xmlParse, xmlChildren, xmlValue, xpathApply, xmlAttrs)
