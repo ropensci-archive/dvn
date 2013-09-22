@@ -14,9 +14,7 @@ dvReleaseStudy(user, pwd, objectid, xmlfile, dv=getOption('dvn'), browser=FALSE,
   \item{browser}{A logical specifying whether the query should be executed in a web browser. Default is \code{FALSE}.}
   \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvQuery}}.}
 }
-\details{
-This is currently not working (HTTP 500 Error)...
-}
+%\details{}
 \value{A character string containing an XML data structure (a Study Atom).}
 \references{
 \href{http://swordapp.github.io/SWORDv2-Profile/SWORDProfile.html#protocoloperations_creatingresource_entry}{Atom entry specification}
