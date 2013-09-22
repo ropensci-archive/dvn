@@ -14,8 +14,8 @@ dvDeleteStudy(user, pwd, objectid, file, dv=getOption('dvn'), browser=FALSE, ...
   \item{browser}{A logical specifying whether the query should be executed in a web browser. Default is \code{FALSE}.}
   \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvQuery}}.}
 }
-\details{This adds a (.zip) file to a study.}
-\value{Unknown...}
+\details{This send a (.zip) file to a study, decompresses it, and adds the file contents to the study.}
+\value{If successful, the Atom entry xml for the study.}
 %\references{}
 \author{Thomas J. Leeper}
 %\note{}

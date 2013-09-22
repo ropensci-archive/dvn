@@ -32,7 +32,7 @@ dvDepositQuery <- function(query, user, pwd, dv=getOption('dvn'), browser=FALSE,
     else if(httpverb=='POST'){
         # POST to handle dvCreateStudy and dvAddFile
         h <- basicTextGatherer()
-        xml <- curlPerform(url = url, userpwd=userpwd, followlocation = TRUE, customrequest = 'POST',
+        xml <- curlPerform(url = url, userpwd=userpwd, customrequest = 'POST', followlocation = TRUE, 
                     ssl.verifypeer = FALSE, ssl.verifyhost = FALSE, writefunction = h$update, verbose=TRUE, ...)
                     #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
                     #cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
