@@ -24,13 +24,14 @@ install_github(repo = "dvn", username = "leeper")
 * `dvDownload`, to download a study file (if allowed)
 
 ### Functions for the Data Deposit API
-* `dvServiceDoc`, to identify dataverses accessible to a user
-* `dvUserStudies`, to list a user's studies
+* `dvServiceDoc`, to identify dataverse(s) accessible to a user
+* `dvUserStudies`, to list a user's studies in a dataverse
 * `dvStudyAtom`, to access study-level URIs for using the Data Deposit API (not important for most users)
 * `dvStudyStatement`, to access a summary of a study (including citation and stable URI)
 * `dvCreateStudy`, to create a study listing
 * `dvEditStudy`, to edit a study's metadata (i.e., cataloging information)
-* `dvAddFile`, to add a file to study
+ * `dvBuildMetadata` builds an XML character string for use in `dvCreateStudy` or `dvEditStudy`
+* `dvAddFile`, to add file(s) to a study (as a .zip)
 * `dvDeleteFile`, to delete a file from a study
 * `dvReleaseStudy`, to publicly release a study
-* `dvDeleteStudy`, to deaccession a released study or delete an unreleased study
+* `dvDeleteStudy`, to deaccession a released study, or delete an unreleased study
