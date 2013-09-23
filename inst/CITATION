@@ -4,12 +4,12 @@ citHeader("To cite package 'dvn' in publications use:")
  vers <- paste("R package version", meta$Version)
  
  citEntry(entry="Manual",
-		  title = "dvn: Access to The Dataverse Network API",
+		  title = "dvn: Access to The Dataverse Network APIs",
 		  author = personList(as.person("Thomas J. Leeper")),
 		  year = year,
 		  note = vers,
 		  textVersion =
 		  paste("Thomas J. Leeper (",
 				year,
-				"). dvn: Access to The Dataverse Network API. ",
+				"). dvn: Access to The Dataverse Network APIs. ",
 				vers, ".", sep=""))
