@@ -15,6 +15,12 @@ dvBuildMetadata(..., format='dcterms')
 \href{http://dublincore.org/documents/dcmi-terms/}{Dublin Core Metadata Terms}
 
 \href{http://en.wikipedia.org/wiki/Dublin_Core\#Qualified_Dublin_Core}{Qualified Dublin Core (Wikipedia)}
+
+\href{http://swordapp.github.io/SWORDv2-Profile/SWORDProfile.html\#protocoloperations_creatingresource_entry}{Atom entry specification}
+
+\href{https://github.com/IQSS/dvn/blob/develop/tools/scripts/data-deposit-api/atom-entry-study.xml}{Qualified Dublin Core XML example 1}
+
+\href{https://github.com/IQSS/dvn/blob/develop/tools/scripts/data-deposit-api/atom-entry-study2.xml}{Qualified Dublin Core XML example 2}
 }
 \author{Thomas J. Leeper}
 %\note{}
@@ -36,5 +42,3 @@ dvBuildMetadata(title="My Study",
                 coverage="United States")
 }
 }
-%\keyword{ ~kwd1 }
-%\keyword{ ~kwd2 }

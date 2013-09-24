@@ -9,7 +9,7 @@ dvEditStudy(objectid, xmlfile, dv=getOption('dvn'),
 }
 \arguments{
   \item{objectid}{A character string containing the id for a dataverse study (a handle). This could be returned from \code{\link{dvUserStudies}}, \code{\link{dvCreateStudy}}, (or, \code{\link{dvSearch}}, from the Data Sharing API).}
-  \item{xmlfile}{The path to an XML file containing a Qualified Dublin Core Atom/XML document, which specifies the metadata necessary to create the study. See references for an example.}
+  \item{xmlfile}{The path to an XML file (or a character string of that XML) containing a Qualified Dublin Core Atom/XML document, which specifies the metadata necessary to create the study. See references for an example and \code{\link{dvBuildMetadata}}.}
   \item{dv}{An optional character string specifying the Dataverse to query. Default is the Harvard IQSS Dataverse.}
   \item{user}{A character string containing a dataverse username. Default is \code{options('dvn.user')}.}
   \item{pwd}{A character string containing the corresponding dataverse password. Default is \code{options('dvn.pwd')}.}
@@ -30,6 +30,7 @@ Note: Editing a study only changes the study in \dQuote{draft}. To make those ch
 \author{Thomas J. Leeper}
 %\note{}
 \seealso{
+\code{\link{dvBuildMetadata}}
 \code{\link{dvAddFile}}
 \code{\link{dvCreateStudy}}
 \code{\link{dvReleaseStudy}}
