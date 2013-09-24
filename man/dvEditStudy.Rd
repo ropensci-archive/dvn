@@ -3,14 +3,16 @@
 \title{Edit a study}
 \description{Use Data Deposit API to replace a study's metadata.}
 \usage{
-dvEditStudy(user, pwd, objectid, xmlfile, dv=getOption('dvn'), browser=FALSE, ...)
+dvEditStudy(objectid, xmlfile, dv=getOption('dvn'),
+            user=getOption('dvn.user'), pwd=getOption('dvn.pwd'), 
+            browser=FALSE, ...)
 }
 \arguments{
-  \item{user}{A character string containing a dataverse username.}
-  \item{pwd}{A character string containing the corresponding dataverse password.}
   \item{objectid}{A character string containing the id for a dataverse study (a handle). This could be returned from \code{\link{dvUserStudies}}, \code{\link{dvCreateStudy}}, (or, \code{\link{dvSearch}}, from the Data Sharing API).}
   \item{xmlfile}{The path to an XML file containing a Qualified Dublin Core Atom/XML document, which specifies the metadata necessary to create the study. See references for an example.}
   \item{dv}{An optional character string specifying the Dataverse to query. Default is the Harvard IQSS Dataverse.}
+  \item{user}{A character string containing a dataverse username. Default is \code{options('dvn.user')}.}
+  \item{pwd}{A character string containing the corresponding dataverse password. Default is \code{options('dvn.pwd')}.}
   \item{browser}{A logical specifying whether the query should be executed in a web browser. Default is \code{FALSE}.}
   \item{...}{Optionally, additional arguments passed to \code{curlPerform} via \code{\link{dvDepositQuery}}.}
 }

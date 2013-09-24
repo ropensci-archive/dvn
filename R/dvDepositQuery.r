@@ -1,5 +1,10 @@
-dvDepositQuery <- function(query, user, pwd, dv=getOption('dvn'), browser=FALSE, apiversion='v1', httpverb='GET', fulluri=NULL, ...){
+dvDepositQuery <-
+function(   query, fulluri=NULL, dv=getOption('dvn'),
+            user=getOption('dvn.user'), pwd=getOption('dvn.pwd'),
+            browser=FALSE, apiversion='v1', httpverb='GET', ...){
     # Data Deposit API workhorse
+    if(is.null(user) | is.null(pwd))
+        stop('Must specify username (`user`) and password (`pwd`)')
     if(is.null(fulluri)){
         if(is.null(dv) || dv=="")
             stop("Must specify Dataverse URL as 'dv'")

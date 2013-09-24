@@ -1,4 +1,8 @@
-dvStudyStatement <- function(user, pwd, objectid, dv=getOption('dvn'), browser=FALSE, ...){
+dvStudyStatement <-
+function(   objectid, dv=getOption('dvn'), user=getOption('dvn.user'),
+            pwd=getOption('dvn.pwd'), browser=FALSE, ...){
+    if(is.null(user) | is.null(pwd))
+        stop('Must specify username (`user`) and password (`pwd`)')
     xml <- dvDepositQuery(query=paste('statement/study/',objectid,sep=''), user=user, pwd=pwd, dv=dv, browser=browser, ...)
     if(is.null(xml))
 		invisible(NULL)

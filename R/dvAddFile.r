@@ -1,4 +1,8 @@
-dvAddFile <- function(user, pwd, objectid, filename, filesize=1e7, dv=getOption('dvn'), browser=FALSE, ...){
+dvAddFile <-
+function(   objectid, filename, filesize=1e7, dv=getOption('dvn'),
+            user=getOption('dvn.user'), pwd=getOption('dvn.pwd'), browser=FALSE, ...){
+    if(is.null(user) | is.null(pwd))
+        stop('Must specify username (`user`) and password (`pwd`)')
     xml <- dvDepositQuery(  query=paste('edit-media/study/',objectid,sep=''), user=user, pwd=pwd, dv=dv, browser=browser,
                             httpverb='POST', #upload=TRUE,
                             postfields=readBin(filename,what='raw',filesize),

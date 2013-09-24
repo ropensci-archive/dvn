@@ -1,4 +1,8 @@
-dvServiceDoc <- function(user, pwd, dv=getOption('dvn'), browser=FALSE, ...){
+dvServiceDoc <-
+function(   dv=getOption('dvn'), user=getOption('dvn.user'),
+            pwd=getOption('dvn.pwd'), browser=FALSE, ...){
+    if(is.null(user) | is.null(pwd))
+        stop('Must specify username (`user`) and password (`pwd`)')
     xml <- dvDepositQuery(query='service-document', user=user, pwd=pwd, dv=dv, browser=browser, ...)
     if(is.null(xml))
 		invisible(NULL)
