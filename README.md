@@ -4,7 +4,7 @@ The goal of the **dvn** package is to integrate public data sharing into the wor
 
 Support for the Data Deposit API is still in ongoing development. This API allows users to directly create and modify dataverse listings (studies, metadata, and files). The Data Deposit API is built on the [SWORD protocol](http://en.wikipedia.org/wiki/SWORD_%28protocol%29), though not all features are fully supported by the API and only a further subset are currently working in **dvn**. Soon, users will be able to integrate data archiving directly into the R workflow with just a few simple functions.
 
-**dvn** defaults to providing access to the [Harvard Dataverse Network](http://dvn.iq.harvard.edu/), but accommodates any publicly available dataverse. This can be changed in each function call or in globally using `options(dvn = 'https://thedata.harvard.edu/')` for any valid Dataverse Network.
+**dvn** defaults to providing access to the [Harvard Dataverse Network](http://dvn.iq.harvard.edu/), but accommodates any publicly available dataverse. This can be changed in each function call or in globally using `options(dvn = 'https://thedata.harvard.edu/')` for any valid [Dataverse Network](http://thedata.org/book/dataverse-networks-around-world).
 
 ### Installation
 
