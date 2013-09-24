@@ -18,8 +18,9 @@ install_github(repo = "dvn", username = "leeper")
 ### Functions for the Data Sharing API
 * `dvSearchFields`, to provide help with searching via the Data Sharing API
 * `dvSearch`, to search public dataverses
-* `dvMetadataFormats`, to retrieve available metadata formats for a study
-* `dvExtractFileIds`, to identify available files in publicly released study
+* `dvMetadataFormats`, to retrieve available metadata *formats* for a study
+* `dvMetadata`, to retrieve the metadata for a study
+ * `dvExtractFileIds`, to extract available files from the `dvMetadata` response
 * `dvDownloadInfo`, to retrieve information about a study file
 * `dvDownload`, to download a study file (if allowed)
 
