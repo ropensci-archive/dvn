@@ -34,40 +34,56 @@ Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
 \keyword{ package }
 %\seealso{}
 \examples{
-# A basic Data Sharing API workflow
 \dontrun{
-	## find available search fields
+    ## A basic Data Sharing API workflow:
+	# find available search fields
 	fields <- dvSearchFields()
 	
-	## search within those fields
+	# search within those fields
 	search <- dvSearch(list(authorName="leeper"))
 	
-	## retrieve available metadata formats for a search result
+	# retrieve available metadata formats for a search result
 	formats <- dvMetadataFormats(search$objectid[1])
 	
-	## retrieve metadata in an available format and find fileId(s)
+	# retrieve metadata in an available format and find fileId(s)
 	files <- dvExtractFileIds(dvMetadata(search$objectid[1], format.type=formats$formatName[1]))
 	
-	## optional search for information about data download
+	# optional search for information about data download
 	info <- dvDownloadInfo(files$fileId[1])
 	
-	## download the data, if allowed by Terms of Use
+	# download the data, if allowed by Terms of Use
 	data <- dvDownload(files$fileId[1])
 }
 \dontrun{
-    ## use basic Data Deposit API functions:
-    myuser <- 'username'
-    password <- 'password'
+    ## Use basic Data Deposit API functions:
+    options(dvn.user='username')
+    options(dvn.pwd='password')
     # retrieve my Dataverses and their terms of use
-    dvServiceDoc(myuser,password)
+    dvServiceDoc()
     
     # retrieve studies for one of my dataverses
-    dvUserStudies(myuser,password,'leeper')
+    dvUserStudies('leeper')
     
     # retrieve a 'Study Atom', providing the citation for a study
-    dvStudyAtom(myuser,password,'hdl:1902.1/17864')
+    dvStudyAtom('hdl:1902.1/17864')
     
     # retrieve a 'Study Statement' providing files stored in a study
-    dvStudyStatement(myuser,password,'hdl:1902.1/17864')
+    dvStudyStatement('hdl:1902.1/17864')
+}
+\dontrun{
+    ## Create a study, add files, and release:
+    options(dvn.user='username')
+    options(dvn.pwd='password')
+    # Check credentials and accessible dataverses
+    dvServiceDoc()
+    
+    # Create study metadata and create study with it
+    writeLines(dvBuildMetadata(title="My Study"),'mystudy.xml')
+    dvCreateStudy('mydataverse','mystudy.xml')
+    
+    # retrieve dataverse `objectid` from `dvCreateStudy` receipt
+    # add files and release study using `objectid`
+    dvAddFile(objectid,'mydata.zip')
+    dvReleaseStudy(objectid)
 }
 }
