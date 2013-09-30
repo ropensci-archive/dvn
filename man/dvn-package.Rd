@@ -56,34 +56,34 @@ Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
 }
 \dontrun{
     ## Use basic Data Deposit API functions:
-    options(dvn.user='username')
-    options(dvn.pwd='password')
+    options(dvn.user="username")
+    options(dvn.pwd="password")
     # retrieve my Dataverses and their terms of use
     dvServiceDoc()
     
     # retrieve studies for one of my dataverses
-    dvUserStudies('leeper')
+    dvUserStudies("leeper")
     
     # retrieve a 'Study Atom', providing the citation for a study
-    dvStudyAtom('hdl:1902.1/17864')
+    dvStudyAtom("hdl:1902.1/17864")
     
     # retrieve a 'Study Statement' providing files stored in a study
-    dvStudyStatement('hdl:1902.1/17864')
+    dvStudyStatement("hdl:1902.1/17864")
 }
 \dontrun{
     ## Create a study, add files, and release:
-    options(dvn.user='username')
-    options(dvn.pwd='password')
+    options(dvn.user="username")
+    options(dvn.pwd="password")
     # Check credentials and accessible dataverses
     dvServiceDoc()
     
     # Create study metadata and create study with it
-    writeLines(dvBuildMetadata(title="My Study"),'mystudy.xml')
-    dvCreateStudy('mydataverse','mystudy.xml')
+    writeLines(dvBuildMetadata(title="My Study"),"mystudy.xml")
+    dvCreateStudy("mydataverse","mystudy.xml")
     
     # retrieve dataverse `objectid` from `dvCreateStudy` receipt
     # add files and release study using `objectid`
-    dvAddFile(objectid,'mydata.zip')
+    dvAddFile(objectid,"mydata.zip")
     dvReleaseStudy(objectid)
 }
 }
