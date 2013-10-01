@@ -6,6 +6,8 @@ Support for the Data Deposit API is still in ongoing development. This API allow
 
 **dvn** defaults to providing access to the [Harvard Dataverse Network](http://dvn.iq.harvard.edu/), but accommodates any publicly available dataverse. This can be changed in each function call or in globally using `options(dvn = 'https://thedata.harvard.edu/')` for any valid [Dataverse Network](http://thedata.org/book/dataverse-networks-around-world).
 
+Users interested in downloading metadata from archives other than Dataverse may be interested in Kurt Hornik's [OAIHarvester](http://cran.r-project.org/web/packages/OAIHarvester/index.html), which offers access to any web repository that is compliant with the [Open Archives Initiative](http://www.openarchives.org/) standards.
+
 ### Installation
 
 You can find a stable release on [CRAN](http://cran.r-project.org/web/packages/dvn/index.html), or install the latest development version from GitHub using [Hadley's](http://had.co.nz/) [devtools](http://cran.r-project.org/web/packages/devtools/index.html) package:
