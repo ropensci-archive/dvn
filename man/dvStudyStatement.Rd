@@ -16,7 +16,7 @@ dvStudyStatement(   objectid, dv=getOption('dvn'),
   \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvDepositQuery}}.}
 }
 %\details{}
-\value{A character string containing an XML data structure, describing study contents (i.e., study files).}
+\value{A list containing information about the study listing, including a dataframe of files stored in the study collection and a character string containing the original XML response data structure.}
 %\references{}
 \author{Thomas J. Leeper}
 %\note{}

@@ -6,6 +6,24 @@ function(   objectid, dv=getOption('dvn'), user=getOption('dvn.user'),
     xml <- dvDepositQuery(query=paste('statement/study/',objectid,sep=''), user=user, pwd=pwd, dv=dv, browser=browser, ...)
     if(is.null(xml))
 		invisible(NULL)
-	if(browser==FALSE)
-		return(xml)
+	if(browser==FALSE){
+        xmlout <- list()
+        xml.list <- xmlToList(xml)
+        xmlout$id <- xml.list$id
+        xmlout$title <- xml.list$title$text
+        xmlout$author <- xml.list$author$name
+        xmlout$updated <- xml.list$updated
+        tmp <- sapply(xml.list[names(xml.list)=='category'], function(i) c(i[['.attrs']]['term'],i[['text']]))
+        for(i in 1:ncol(tmp))
+            xmlout[tmp[1,i]] <- tmp[2,i]
+        rm(tmp)
+        tmp <- xml.list[names(xml.list)=='entry']
+        resources <- t(sapply(tmp, function(i) c(i$content, title=i$title$text, summary=i$summary$text, updated=i$updated)))
+        rownames(resources) <- seq(1,nrow(resources))
+        rm(tmp)
+        xmlout$files <- as.data.frame(resources, stringsAsFactors=FALSE)
+        xmlout$files$fileId <- sapply(z$files$src, function(i) strsplit(strsplit(i,'file/')[[1]][2],'/')[[1]][1])
+        xmlout$xml <- xml
+		return(xmlout)
+    }
 }
