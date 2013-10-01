@@ -12,8 +12,8 @@ The Data Deposit API provides the ability to create and modify Dataverse studies
 \tabular{ll}{
 Package: \tab dvn\cr
 Type: \tab Package\cr
-Version: \tab 0.2.45\cr
-Date: \tab 2013-09-24\cr
+Version: \tab 0.2.5\cr
+Date: \tab 2013-10-01\cr
 License: \tab GPL-2\cr
 }
 }
