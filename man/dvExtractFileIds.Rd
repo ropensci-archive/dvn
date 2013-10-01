@@ -8,7 +8,7 @@ dvExtractFileIds(xml)
 \arguments{
   \item{xml}{A character string containing an XML data structure returned by \code{\link{dvMetadata}}.}
 }
-\details{Extracts all of the fileIds associated with a retrieved dataverse record.}
+\details{Extracts all of the fileIds associated with a retrieved dataverse record. Metadata format must be DDI. The Dublin Core metadata record does not include fileIds.}
 \value{A dataframe containing fileIds and associated descriptive information for files stored in the dataverse record.}
 %\references{}
 \author{Thomas J. Leeper}

@@ -1,5 +1,7 @@
 dvExtractFileIds <- function(xml){
-	nodes <- xmlChildren(xmlChildren(xmlParse(xml))$codeBook)
+	if(is.null(xmlChildren(xmlParse(xml))$codeBook))
+        stop("Metadata format not currently supported. Must be 'ddi'.")
+    nodes <- xmlChildren(xmlChildren(xmlParse(xml))$codeBook)
 	dscrs <- nodes[names(nodes)=="fileDscr"]
 	d <- data.frame(matrix(nrow=length(dscrs),ncol=5))
 	names(d) <- c("fileName","fileId","URI","caseQnty","varQnty")
