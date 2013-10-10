@@ -11,8 +11,8 @@ dvSearch(query, dv = getOption('dvn'), browser = FALSE, ...)
   \item{browser}{A logical specifying whether the query should be executed in a web browser. Default is \code{FALSE}.}
   \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvQuery}}.}
 }
-%\details{}
-\value{A dataframe containing one variable (\code{objectid}), made up of character strings containing dataverse objectids.}
+\details{Unlike searching on the dataverse website, the API requires searching within named metdata fields. The set of available metadata fields can be retrieved from \code{\link{dvSearchFields}}.}
+\value{A dataframe containing one variable (\code{objectid}), made up of character strings containing dataverse objectIds.}
 %\references{}
 \author{Thomas J. Leeper}
 %\note{}
