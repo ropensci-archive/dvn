@@ -4,3 +4,4 @@ importFrom(XML, xmlParse, xmlChildren, xmlValue, xpathApply, xmlAttrs, xmlToList
 importFrom(XML, newXMLNode, addChildren, toString.XMLNode) # for `dvBuildMetadata`
 S3method(print, dvStudyAtom)
 S3method(print, dvUserStudies)
+S3method(print, dvStudyStatement)
