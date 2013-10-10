@@ -5,3 +5,4 @@ importFrom(XML, newXMLNode, addChildren, toString.XMLNode) # for `dvBuildMetadat
 S3method(print, dvStudyAtom)
 S3method(print, dvUserStudies)
 S3method(print, dvStudyStatement)
+S3method(print, dvServiceDoc)
