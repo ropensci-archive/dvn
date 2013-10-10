@@ -5,7 +5,7 @@ function(   objectid, filename, filesize=1e7, dv=getOption('dvn'),
         stop('Must specify username (`user`) and password (`pwd`)')
     if(is.null(filename))
         stop("Must specify filename as .zip, a vector of filenames, or the name of an R dataframe")
-    if(length(filename)>1 | (length(filename)==1 & !tools::file_ext(filename)=='zip')){
+    if(length(filename)>1 || (length(filename)==1 && !tools::file_ext(filename)=='zip')){
         tmp <- tempfile(fileext='.zip')
         zip(tmp, filename)
         filename <- tmp
