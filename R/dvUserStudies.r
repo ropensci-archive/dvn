@@ -29,7 +29,7 @@ function(   dvname, dv=getOption('dvn'), user=getOption('dvn.user'),
     }
 }
 
-print.dvUserStudies <- function(x){
+print.dvUserStudies <- function(x,...){
     cat('DV Title:     ',x$dvtitle,'\n')
     cat('DV Name:      ',x$dvname,'\n')
     cat('Released?     ',x$release,'\n')

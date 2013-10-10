@@ -1,5 +1,6 @@
 \name{dvServiceDoc}
 \alias{dvServiceDoc}
+\alias{print.dvServiceDoc}
 \title{Get Dataverse Service Document}
 \description{Obtain a Data Deposit API Service Document}
 \usage{

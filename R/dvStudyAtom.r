@@ -21,7 +21,7 @@ function(   objectid, dv=getOption('dvn'), user=getOption('dvn.user'),
     return(xmlout)
 }
 
-print.dvStudyAtom <- function(x){
+print.dvStudyAtom <- function(x,...){
     cat('Citation:     ',x$bibliographicCitation,'\n')
     cat('ObjectId:     ',x$objectId,'\n')
     cat('Study URI:    ',x$id,'\n')

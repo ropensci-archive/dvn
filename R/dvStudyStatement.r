@@ -30,7 +30,7 @@ function(   objectid, dv=getOption('dvn'), user=getOption('dvn.user'),
     }
 }
 
-print.dvStudyStatement <- function(x){
+print.dvStudyStatement <- function(x,...){
     cat('Study author: ',x$author,'\n')
     cat('Study title:  ',x$title,'\n')
     cat('ObjectId:     ',x$objectId,'\n')

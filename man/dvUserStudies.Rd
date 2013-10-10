@@ -1,5 +1,6 @@
 \name{dvUserStudies}
 \alias{dvUserStudies}
+\alias{print.dvUserStudies}
 \title{Studies in a Dataverse}
 \description{Use Data Deposit API to obtain list of studies in a named Dataverse.}
 \usage{

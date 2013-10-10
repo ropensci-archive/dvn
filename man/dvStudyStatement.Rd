@@ -1,5 +1,6 @@
 \name{dvStudyStatement}
 \alias{dvStudyStatement}
+\alias{print.dvStudyStatement}
 \title{Obtain a study statement}
 \description{Use Data Deposit API to obtain a listing of study contents.}
 \usage{

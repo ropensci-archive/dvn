@@ -1,5 +1,6 @@
 \name{dvStudyAtom}
 \alias{dvStudyAtom}
+\alias{print.dvStudyAtom}
 \title{Obtain a study's Atom document}
 \description{Use Data Deposit API to obtain an Atom document for a study.}
 \usage{
