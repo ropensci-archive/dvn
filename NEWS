@@ -1,6 +1,7 @@
 # CHANGES TO dvn 0.3 #
 
 ## SIGNIFICANT USER-VISIBLE CHANGES ##
+* `dvAddFile` no longer has a `filesize` argument (it being automatically calculated). The function now accepts filenames/paths (via `filename`) or dataframe names (via `dataframe`).
 * Support for the Data Deposit API has been added in the form of a `dvDepositQuery` workhorse function and some wrappers that search a user's dataverse(s): `dvServiceDoc`, `dvUserStudies`, `dvStudyAtom`, and `dvStudyStatement`. Functions to create, release, and delete studies are also supported: `dvCreateStudy`, `dvReleaseStudy`, and `dvDeleteStudy`.
   * From v0.2.65, added S3 print methods for almost all of the Data Deposit functions.
   * From v0.2.6, the Study Atom is converted to a list in all relevant functions, making it easier to extract a study's `objectId`.
@@ -12,6 +13,9 @@
 
 ## BUG FIXES ##
 * Fixed a bug in `dvDownload` that failed to propagate the correct dataverse to `dvDownloadInfo` (h/t Egon Willighagen)
+
+## DOCUMENTATION ##
+* Package documenation now reports workflows for use of both the Data Sharing and Data Deposit APIs.
 
 
 # CHANGES TO dvn 0.2 #
