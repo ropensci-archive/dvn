@@ -22,7 +22,7 @@ function(   objectid, dv=getOption('dvn'), user=getOption('dvn.user'),
         rownames(resources) <- seq(1,nrow(resources))
         rm(tmp)
         xmlout$files <- as.data.frame(resources, stringsAsFactors=FALSE)
-        xmlout$files$fileId <- sapply(z$files$src, function(i) strsplit(strsplit(i,'file/')[[1]][2],'/')[[1]][1])
+        xmlout$files$fileId <- sapply(xmlout$files$src, function(i) strsplit(strsplit(i,'file/')[[1]][2],'/')[[1]][1])
         xmlout$xml <- xml
 		return(xmlout)
     }
