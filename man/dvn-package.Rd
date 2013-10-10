@@ -79,11 +79,12 @@ Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
     
     # Create study metadata and create study with it
     writeLines(dvBuildMetadata(title="My Study"),"mystudy.xml")
-    dvCreateStudy("mydataverse","mystudy.xml")
+    created <- dvCreateStudy("mydataverse","mystudy.xml")
     
     # Get `objectId` from `dvUserStudies`
-    dvUserStudies("mydataverse")$studies$objectId[1]
+    objectid <- dvUserStudies("mydataverse")$studies$objectId[1]
     # Or, retrieve dataverse `objectid` from `dvCreateStudy` receipt
+    objectid <- created$objectId
     
     # Add files and release study using `objectid`
     dvAddFile(objectid,"mydata.zip")
