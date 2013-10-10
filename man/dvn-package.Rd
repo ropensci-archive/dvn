@@ -65,8 +65,10 @@ Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
     # retrieve my Dataverses and their terms of use
     dvServiceDoc()
     
-    # retrieve studies for one of my dataverses
-    dvUserStudies("leeper")
+    # Retrieve available studies in a user's dataverse with either:
+    dvUserStudies("mydataverse")
+    # Or:
+    dvUserStudies(dvServiceDoc())
     
     # retrieve a 'Study Atom', providing the citation for a study
     dvStudyAtom("hdl:1902.1/17864")

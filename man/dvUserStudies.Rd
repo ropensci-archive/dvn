@@ -14,7 +14,7 @@ dvUserStudies(  dvname, dv=getOption('dvn'), user=getOption('dvn.user'),
   \item{browser}{A logical specifying whether the query should be executed in a web browser. Default is \code{FALSE}.}
   \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvDepositQuery}}.}
 }
-%\details{}
+\details{For the \code{dvname} argument, it is also possible to simply pass the \dQuote{dvServiceDoc} object directly in lieu of naming a dataverse: \code{dvUserStudies(dvServiceDoc())}. If the user has access to more than one dataverse collection, the first will be used (and produce a warning).}
 \value{A list containing:
   \item{dvtitle}{The title of the dataverse, as a character string.}
   \item{released}{A character string reporting whether the dataverse is publicly released.}
