@@ -9,6 +9,7 @@ function(   objectid, dv=getOption('dvn'), user=getOption('dvn.user'),
 	if(browser==FALSE){
         xmlout <- list()
         xml.list <- xmlToList(xml)
+        xmlout$objectId <- objectid
         xmlout$id <- xml.list$id
         xmlout$title <- xml.list$title$text
         xmlout$author <- xml.list$author$name
@@ -24,6 +25,20 @@ function(   objectid, dv=getOption('dvn'), user=getOption('dvn.user'),
         xmlout$files <- as.data.frame(resources, stringsAsFactors=FALSE)
         xmlout$files$fileId <- sapply(xmlout$files$src, function(i) strsplit(strsplit(i,'file/')[[1]][2],'/')[[1]][1])
         xmlout$xml <- xml
-		return(xmlout)
+        class(xmlout) <- 'dvStudyStatement'
+        return(xmlout)
     }
+}
+
+print.dvStudyStatement <- function(x){
+    cat('Study author: ',x$author,'\n')
+    cat('Study title:  ',x$title,'\n')
+    cat('ObjectId:     ',x$objectId,'\n')
+    cat('Study URI:    ',x$id,'\n')
+    cat('Last updated: ',x$updated,'\n')
+    cat('Status:       ',x$latestVersionState,'\n')
+    cat('Locked?       ',x$locked,'\n')
+    cat('Files:\n')
+    print(x$files[,c('src','type','updated','fileId')], right=FALSE)
+    invisible(x)
 }
