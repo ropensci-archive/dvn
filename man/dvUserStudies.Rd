@@ -15,7 +15,13 @@ dvUserStudies(  dvname, dv=getOption('dvn'), user=getOption('dvn.user'),
   \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvDepositQuery}}.}
 }
 %\details{}
-\value{A character string containing an XML data structure, which describes the studies available in a named dataverse.}
+\value{A list containing:
+  \item{dvtitle}{The title of the dataverse, as a character string.}
+  \item{released}{A character string reporting whether the dataverse is publicly released.}
+  \item{generator}{A vector containing details about the SWORD application.}
+  \item{studies}{A two-column dataframe containing \code{title} and \code{objectId} for each study in the dataverse.}
+  \item{xml}{A character string containing an XML data structure, which describes the studies available in a named dataverse.}
+}
 %\references{}
 \author{Thomas J. Leeper}
 %\note{}
