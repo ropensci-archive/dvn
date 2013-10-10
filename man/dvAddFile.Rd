@@ -9,7 +9,7 @@ dvAddFile(  objectid, filename, filesize=1e7, dv=getOption('dvn'),
 }
 \arguments{
   \item{objectid}{A character string containing the id for a dataverse study (a handle). This could be returned from \code{\link{dvUserStudies}}, \code{\link{dvCreateStudy}}, (or, \code{\link{dvSearch}}, from the Data Sharing API).}
-  \item{filename}{The path to a file to be uploaded. Currently only .zip files are supported.}
+  \item{filename}{The path to a .zip file to be uploaded, or a vector of filenames (or paths) that will be compressed then uploaded.}
   \item{filesize}{A numeric indicating an (over)estimate of the file size. Underestimating file size creates problems when the .zip is read into memory.}
   \item{dv}{An optional character string specifying the Dataverse to query. Default is the Harvard IQSS Dataverse.}
   \item{user}{A character string containing a dataverse username. Default is \code{options('dvn.user')}.}
@@ -17,7 +17,7 @@ dvAddFile(  objectid, filename, filesize=1e7, dv=getOption('dvn'),
   \item{browser}{A logical specifying whether the query should be executed in a web browser. Default is \code{FALSE}.}
   \item{...}{Optionally, additional arguments passed to \code{curlPerform} via \code{\link{dvDepositQuery}}.}
 }
-\details{This send a (.zip) file to a study, decompresses it, and adds the file contents to the study.
+\details{This send a (.zip) file to a study, decompresses it, and adds the file contents to the study. To send multiple files, specify them as a character vector in \code{filename}.
 
 Note: Filenames in the .zip must be unique and cannot duplicate the names of any files already attached to the study. Use \code{\link{dvDeleteFile}} to remove previous files and then replace by uploading a new .zip.
 }
