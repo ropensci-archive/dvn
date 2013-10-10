@@ -10,7 +10,25 @@ dvBuildMetadata(..., format='dcterms')
   \item{format}{A character specifying the format of the metadata XML. Default is \dQuote{dcterms}.}
 }
 %\details{}
-\value{A character string containing a complete Atom entry for use in \code{\link{dvCreateStudy}} or \code{\link{dvEditStudy}}.}
+\value{A character string containing a complete Atom entry for use in \code{\link{dvCreateStudy}} or \code{\link{dvEditStudy}}.
+
+Allowed fields are:
+\dQuote{abstract}, \dQuote{accessRights}, \dQuote{accrualMethod},
+\dQuote{accrualPeriodicity}, \dQuote{accrualPolicy}, \dQuote{alternative},
+\dQuote{audience}, \dQuote{available}, \dQuote{bibliographicCitation},
+\dQuote{conformsTo}, \dQuote{contributor}, \dQuote{coverage}, \dQuote{created},
+\dQuote{creator}, \dQuote{date}, \dQuote{dateAccepted}, \dQuote{dateCopyrighted},
+\dQuote{dateSubmitted}, \dQuote{description}, \dQuote{educationLevel}, \dQuote{extent},
+\dQuote{format}, \dQuote{hasFormat}, \dQuote{hasPart}, \dQuote{hasVersion},
+\dQuote{identifier}, \dQuote{instructionalMethod}, \dQuote{isFormatOf},
+\dQuote{isPartOf}, \dQuote{isReferencedBy}, \dQuote{isReplacedBy}, \dQuote{isRequiredBy},
+\dQuote{issued}, \dQuote{isVersionOf}, \dQuote{language}, \dQuote{license},
+\dQuote{mediator}, \dQuote{medium}, \dQuote{modified}, \dQuote{provenance},
+\dQuote{publisher}, \dQuote{references}, \dQuote{relation}, \dQuote{replaces},
+\dQuote{requires}, \dQuote{rights}, \dQuote{rightsHolder}, \dQuote{source},
+\dQuote{spatial}, \dQuote{subject}, \dQuote{tableOfContents}, \dQuote{temporal},
+\dQuote{title}, \dQuote{type}, and \dQuote{valid}.
+}
 \references{
 \href{http://dublincore.org/documents/dcmi-terms/}{Dublin Core Metadata Terms}
 
