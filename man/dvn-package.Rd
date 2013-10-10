@@ -12,8 +12,8 @@ The Data Deposit API provides the ability to create and modify Dataverse studies
 \tabular{ll}{
 Package: \tab dvn\cr
 Type: \tab Package\cr
-Version: \tab 0.2.5\cr
-Date: \tab 2013-10-01\cr
+Version: \tab 0.2.6\cr
+Date: \tab 2013-10-10\cr
 License: \tab GPL-2\cr
 }
 }
@@ -81,9 +81,15 @@ Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
     writeLines(dvBuildMetadata(title="My Study"),"mystudy.xml")
     dvCreateStudy("mydataverse","mystudy.xml")
     
-    # retrieve dataverse `objectid` from `dvCreateStudy` receipt
-    # add files and release study using `objectid`
+    # Get `objectId` from `dvUserStudies`
+    dvUserStudies("mydataverse")$studies$objectId[1]
+    # Or, retrieve dataverse `objectid` from `dvCreateStudy` receipt
+    
+    # Add files and release study using `objectid`
     dvAddFile(objectid,"mydata.zip")
+    # or add multiple files:
+    dvAddFile(objectid,c("file1.csv","file2.txt"))
+    # Release study
     dvReleaseStudy(objectid)
 }
 }
