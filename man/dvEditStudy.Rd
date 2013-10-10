@@ -21,7 +21,15 @@ This function replaces a study's metadata. That is, it is not possible to edit s
 
 Note: Editing a study only changes the study in \dQuote{draft}. To make those changes public, the study needs to be subsequently released. A released study can be \dQuote{deaccessioned} (replacing its public record with a publicly visible record about its previous release) using \code{dvDeleteStudy} but cannot be deleted.
 }
-\value{A character string containing an XML data structure (a Study Atom). If successful, the request will reflect the contents of \code{xmlfile}. See \code{\link{dvStudyAtom}}.}
+\value{If successful, a list containing:
+  \item{bibliographicCitation}{A full citation for the study, compiled from metadata.}
+  \item{generator}{A vector containing details about the SWORD application.}
+  \item{id}{The full URI for the study.}
+  \item{objectId}{The \code{objectId} for the study.}
+  \item{xml}{A character string containing an XML data structure that includes a study citation and handle.}
+
+If successful, the request will reflect the contents of \code{xmlfile}.
+}
 \references{
 \href{http://swordapp.github.io/SWORDv2-Profile/SWORDProfile.html\#protocoloperations_creatingresource_entry}{Atom entry specification}
 \href{https://github.com/IQSS/dvn/blob/develop/tools/scripts/data-deposit-api/atom-entry-study.xml}{Qualified Dublin Core XML example 1}

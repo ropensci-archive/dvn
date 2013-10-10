@@ -19,5 +19,5 @@ function(   objectid, filename, filesize=1e7, dv=getOption('dvn'),
     if(is.null(xml))
 		invisible(NULL)
 	if(browser==FALSE)
-		return(xml)
+		.dvParseAtom(xml)
 }

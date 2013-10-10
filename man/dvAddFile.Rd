@@ -21,7 +21,13 @@ dvAddFile(  objectid, filename, filesize=1e7, dv=getOption('dvn'),
 
 Note: Filenames in the .zip must be unique and cannot duplicate the names of any files already attached to the study. Use \code{\link{dvDeleteFile}} to remove previous files and then replace by uploading a new .zip.
 }
-\value{If successful, the Atom entry xml for the study. See \code{\link{dvStudyAtom}}.}
+\value{If successful, a list containing:
+  \item{bibliographicCitation}{A full citation for the study, compiled from metadata.}
+  \item{generator}{A vector containing details about the SWORD application.}
+  \item{id}{The full URI for the study.}
+  \item{objectId}{The \code{objectId} for the study.}
+  \item{xml}{A character string containing an XML data structure that includes a study citation and handle.}
+}
 %\references{}
 \author{Thomas J. Leeper}
 %\note{}

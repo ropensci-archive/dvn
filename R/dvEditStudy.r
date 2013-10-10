@@ -15,5 +15,5 @@ function(   objectid, xmlfile, dv=getOption('dvn'),
     if(is.null(xml))
 		invisible(NULL)
 	if(browser==FALSE)
-		return(xml)
+		.dvParseAtom(xml)
 }

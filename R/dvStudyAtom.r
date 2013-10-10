@@ -7,5 +7,5 @@ function(   objectid, dv=getOption('dvn'), user=getOption('dvn.user'),
     if(is.null(xml))
 		invisible(NULL)
 	if(browser==FALSE)
-		return(xml)
+        .dvParseAtom(xml)
 }

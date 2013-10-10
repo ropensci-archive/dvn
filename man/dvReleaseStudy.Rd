@@ -16,7 +16,13 @@ dvReleaseStudy( objectid, dv=getOption('dvn'),
   \item{...}{Optionally, additional arguments passed to \code{curlPerform} via \code{\link{dvQuery}}.}
 }
 %\details{}
-\value{A character string containing an XML data structure (a Study Atom). See \code{\link{dvStudyAtom}}.}
+\value{If successful, a list containing:
+  \item{bibliographicCitation}{A full citation for the study, compiled from metadata.}
+  \item{generator}{A vector containing details about the SWORD application.}
+  \item{id}{The full URI for the study.}
+  \item{objectId}{The \code{objectId} for the study.}
+  \item{xml}{A character string containing an XML data structure that includes a study citation and handle.}
+}
 %\references{}
 \author{Thomas J. Leeper}
 %\note{}
