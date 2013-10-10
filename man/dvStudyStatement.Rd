@@ -16,7 +16,16 @@ dvStudyStatement(   objectid, dv=getOption('dvn'),
   \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvDepositQuery}}.}
 }
 %\details{}
-\value{A list containing information about the study listing, including a dataframe (\code{files}) containing of files stored in the study collection (and their associated \code{fileId}) and a character string containing the original XML response data structure.}
+\value{A list containing information about the study listing, including:
+  \item{id}{The Data Deposit API URI for the study.}
+  \item{title}{The title of the study.}
+  \item{author}{The study author.}
+  \item{updated}{A timestamp.}
+  \item{locked}{A logical as a character string.}
+  \item{latestVersionState}{A character string containing, generally, \dQuote{DRAFT} or \dQuote{RELEASED}.}
+  \item{files}{A dataframe containing of files stored in the study collection (and their associated \code{fileId})}
+  \item{xml}{A character string containing the original XML response data structure.}
+}
 %\references{}
 \author{Thomas J. Leeper}
 %\note{}
