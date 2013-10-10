@@ -36,23 +36,27 @@ Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
 \examples{
 \dontrun{
     ## A basic Data Sharing API workflow:
-	# find available search fields
-	fields <- dvSearchFields()
-	
-	# search within those fields
-	search <- dvSearch(list(authorName="leeper"))
-	
-	# retrieve available metadata formats for a search result
-	formats <- dvMetadataFormats(search$objectid[1])
-	
-	# retrieve metadata in an available format and find fileId(s)
-	files <- dvExtractFileIds(dvMetadata(search$objectid[1], format.type=formats$formatName[1]))
-	
-	# optional search for information about data download
-	info <- dvDownloadInfo(files$fileId[1])
-	
-	# download the data, if allowed by Terms of Use
-	data <- dvDownload(files$fileId[1])
+    # find available search fields
+    fields <- dvSearchFields()
+    
+    # search within those fields
+    search <- dvSearch(list(authorName="leeper"))
+    
+    # retrieve available metadata formats for a search result
+    formats <- dvMetadataFormats(search$objectid[1])
+    
+    # retrieve metadata in an available format and find fileId(s)
+    files <- dvExtractFileIds(dvMetadata(search$objectid[1], format.type=formats$formatName[1]))
+    
+    # optional search for information about data download
+    info <- dvDownloadInfo(files$fileId[1])
+    
+    # download the data, if allowed by Terms of Use
+    data <- dvDownload(files$fileId[1])
+    
+    # change Dataverse network (to Odum Institute)
+    options(dvn='https://arc.irss.unc.edu/dvn/')
+    search <- dvSearch(list(authorName="leeper"))
 }
 \dontrun{
     ## Use basic Data Deposit API functions:
