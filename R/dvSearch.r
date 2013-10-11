@@ -1,4 +1,4 @@
-dvSearch <- function(query, dv = getOption('dvn'), browser=FALSE, ...){
+dvSearch <- function(query, boolean='AND', dv = getOption('dvn'), browser=FALSE, ...){
 	if(is.null(query))
 		stop("Must specify query as named list or character string")
 	else{
@@ -7,7 +7,7 @@ dvSearch <- function(query, dv = getOption('dvn'), browser=FALSE, ...){
 			for(i in 1:length(query)){
 				q <- paste(q,names(query)[i],":",query[[i]],sep="")
 				if(i<length(query))
-					q <- paste(q," AND ",sep="")
+					q <- paste(q,"%20",boolean,"%20",sep="")
 			}
 			query <- q
 		}
@@ -20,12 +20,12 @@ dvSearch <- function(query, dv = getOption('dvn'), browser=FALSE, ...){
 	if(is.null(xml))
 		invisible(NULL)
 	if(browser==FALSE){
-		results <- xpathApply(xmlParse(xml),"//study")
-		d <- data.frame(matrix(nrow=length(results),ncol=1))
-		names(d) <- c("objectid")
-		for(i in 1:length(results)){
-			d$objectid[i] <- xmlAttrs(results[[i]])
-		}
+		results <- unlist(xpathApply(xmlParse(xml),"//study", fun=xmlAttrs))
+		if(length(results))
+			d <- data.frame(objectId=results)
+		else
+			d <- NULL
+		message(nrow(d), ' search results returned\n')
 		return(d)
 	}
 }
