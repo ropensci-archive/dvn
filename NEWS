@@ -4,6 +4,7 @@
 * `dvSearch` now supports both boolean AND and boolean OR logic to combine multiple search terms. See documentation.
 * `dvAddFile` no longer has a `filesize` argument (it being automatically calculated). The function now accepts filenames/paths (via `filename`) or dataframe names (via `dataframe`).
 * Support for the Data Deposit API has been added in the form of a `dvDepositQuery` workhorse function and some wrappers that search a user's dataverse(s): `dvServiceDoc`, `dvUserStudies`, `dvStudyAtom`, and `dvStudyStatement`. Functions to create, release, and delete studies are also supported: `dvCreateStudy`, `dvReleaseStudy`, and `dvDeleteStudy`.
+  * From v0.2.7, improved error handling provides more parsed XML/HTML error messages when `dvDepositQuery` fails (#11)
   * From v0.2.65, added S3 print methods for almost all of the Data Deposit functions.
   * From v0.2.6, the Study Atom is converted to a list in all relevant functions, making it easier to extract a study's `objectId`.
   * From v0.2.6, `dvUserStudies` and `dvStudyStatement` return a list of values (for use in subsequent functions), in addition to the raw XML.
