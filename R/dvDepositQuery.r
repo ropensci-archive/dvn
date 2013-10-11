@@ -61,6 +61,7 @@ function(   query, fulluri=NULL, dv=getOption('dvn'),
                     #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
                     #cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
         xml <- h$value()
+        return(xml)
     }
     if('html' %in% names(xmlChildren(xmlParse(xml)))){
         temp <- htmlTreeParse(xml,useInternal=TRUE)
