@@ -1,6 +1,7 @@
 # CHANGES TO dvn 0.3 #
 
 ## SIGNIFICANT USER-VISIBLE CHANGES ##
+* `dvSearch` now supports both boolean AND and boolean OR logic to combine multiple search terms. See documentation.
 * `dvAddFile` no longer has a `filesize` argument (it being automatically calculated). The function now accepts filenames/paths (via `filename`) or dataframe names (via `dataframe`).
 * Support for the Data Deposit API has been added in the form of a `dvDepositQuery` workhorse function and some wrappers that search a user's dataverse(s): `dvServiceDoc`, `dvUserStudies`, `dvStudyAtom`, and `dvStudyStatement`. Functions to create, release, and delete studies are also supported: `dvCreateStudy`, `dvReleaseStudy`, and `dvDeleteStudy`.
   * From v0.2.65, added S3 print methods for almost all of the Data Deposit functions.
@@ -12,6 +13,7 @@
 * The default dataverse (Harvard IQSS Dataverse) is now specified as a global option, which can be user-redefined with `options('dvn')`.
 
 ## BUG FIXES ##
+* Fixed a url space encoding bug in `dvSearch` that prevented the use of multiple search terms.
 * Fixed a bug in `dvDownload` that failed to propagate the correct dataverse to `dvDownloadInfo` (h/t Egon Willighagen)
 
 ## DOCUMENTATION ##
