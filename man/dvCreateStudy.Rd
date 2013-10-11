@@ -17,11 +17,11 @@ dvCreateStudy(  dvname, xmlfile, dv=getOption('dvn'),
   \item{...}{Optionally, additional arguments passed to \code{curlPerform} via \code{\link{dvDepositQuery}}.}
 }
 \details{
-This function creates a study in a dataverse using a Qualified Dublin Core Atom/XML document. This document must contain a title, with all other fields being optional.
+This function creates a study in a dataverse using a Qualified Dublin Core Atom/XML document (possibly built by \code{\link{dvBuildMetadata}}). This document must contain a title, with all other fields being optional.
 
-Creating a study only changes the study in \dQuote{draft}. To make a study public (and thus visible online or via \code{\link{dvSearch}}), the study needs to be subsequently released with \code{\link{dvReleaseStudy}}. It can also be deleted with \code{\link{dvDeleteStudy}}.
+For the \code{dvname} argument, it is also possible to simply pass the \dQuote{dvServiceDoc} object directly in lieu of naming a dataverse: \code{dCreateStudy(dvServiceDoc(),"atom.xml")}. In this case, if the user has access to more than one dataverse collection, an error will be produced.
 
-Note: A released study can be \dQuote{deaccessioned} (replacing its public record with a publicly visible record about its previous release) using \code{dvDeleteStudy} but cannot be deleted.
+Creating a study only changes the study in \dQuote{draft}. To make a study public (and thus visible online or via \code{\link{dvSearch}}), the study needs to be subsequently released with \code{\link{dvReleaseStudy}}. It can also be deleted with \code{\link{dvDeleteStudy}}. Note: A released study can be \dQuote{deaccessioned} (replacing its public record with a publicly visible record about its previous release) using \code{dvDeleteStudy} but cannot be deleted.
 }
 \value{If successful, a list containing:
   \item{bibliographicCitation}{A full citation for the study, compiled from metadata.}
