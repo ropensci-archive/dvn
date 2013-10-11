@@ -3,7 +3,7 @@ function(   dvname, dv=getOption('dvn'), user=getOption('dvn.user'),
             pwd=getOption('dvn.pwd'), browser=FALSE, ...){
     if(is.null(user) | is.null(pwd))
         stop('Must specify username (`user`) and password (`pwd`)')
-    if(is.null(dvname))
+    if(missing(dvname) || is.null(dvname))
     	stop('Must specify name of a dataverse as `dvname`')
     if(inherits(dvname,'dvServiceDoc')){
         tmp <- dvname$dataverses$dvn
