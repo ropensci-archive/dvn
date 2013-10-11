@@ -6,7 +6,7 @@ function(   dv=getOption('dvn'), user=getOption('dvn.user'),
     xml <- dvDepositQuery(query='service-document', user=user, pwd=pwd, dv=dv, browser=browser, ...)
     if(is.null(xml))
         invisible(NULL)
-    if(browser==FALSE){
+    else if(browser==FALSE){
         xmlout <- list()
         xmllist <- xmlToList(xml)
         xmlout$user <- user
