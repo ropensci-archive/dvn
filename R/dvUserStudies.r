@@ -4,7 +4,7 @@ function(   dvname, dv=getOption('dvn'), user=getOption('dvn.user'),
     if(is.null(user) | is.null(pwd))
         stop('Must specify username (`user`) and password (`pwd`)')
     if(inherits(dvname,'dvServiceDoc')){
-        tmp <- dvServiceDoc()$dataverses$dvn
+        tmp <- dvname$dataverses$dvn
         if(length(tmp)>1)
             warning('Multiple dataverses available for this user. Results returned for first collection: \'',tmp[1],'\'.')
         dvname <- tmp[1]
