@@ -71,6 +71,12 @@ function(   query, fulluri=NULL, dv=getOption('dvn'),
         message(paste(out,'\n',collapse='\n'))
         return(NULL)
     }
+    else if('error' %in% names(xmlChildren(xmlParse(xml)))){
+        xmllist <- xmlToList(xml)
+        out <- paste(xmllist$title,': ',xmllist$treatment,'\n',xmllist$summary,'\n',sep='')
+        message(out)
+        return(NULL)
+    }
     else
         return(xml)
 }
