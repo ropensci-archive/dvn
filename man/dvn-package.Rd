@@ -43,10 +43,10 @@ Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
     search <- dvSearch(list(authorName="leeper"))
     
     # retrieve available metadata formats for a search result
-    formats <- dvMetadataFormats(search$objectid[1])
+    formats <- dvMetadataFormats(search$objectId[1])
     
     # retrieve metadata in an available format and find fileId(s)
-    files <- dvExtractFileIds(dvMetadata(search$objectid[1], format.type=formats$formatName[1]))
+    files <- dvExtractFileIds(dvMetadata(search$objectId[1], format.type=formats$formatName[1]))
     
     # optional search for information about data download
     info <- dvDownloadInfo(files$fileId[1])
