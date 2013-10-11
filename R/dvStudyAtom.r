@@ -5,8 +5,8 @@ function(   objectid, dv=getOption('dvn'), user=getOption('dvn.user'),
         stop('Must specify username (`user`) and password (`pwd`)')
     xml <- dvDepositQuery(query=paste('edit/study/',objectid,sep=''), user=user, pwd=pwd, dv=dv, browser=browser, ...)
     if(is.null(xml))
-		invisible(NULL)
-	if(browser==FALSE)
+        invisible(NULL)
+    else if(browser==FALSE)
         .dvParseAtom(xml)
 }
 
