@@ -32,7 +32,6 @@ function(   query, fulluri=NULL, dv=getOption('dvn'),
                     ssl.verifypeer = FALSE, ssl.verifyhost = FALSE, ...)
                     #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
                     #cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
-        return(xml)
     }
     else if(httpverb=='POST'){
         # POST to handle dvCreateStudy and dvAddFile
@@ -41,7 +40,7 @@ function(   query, fulluri=NULL, dv=getOption('dvn'),
                     ssl.verifypeer = FALSE, ssl.verifyhost = FALSE, writefunction = h$update, verbose=TRUE, ...)
                     #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
                     #cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
-        return(h$value())
+        xml <- h$value()
     }
     else if(httpverb=='PUT'){
         # PUT to handle dvEditStudy
@@ -51,7 +50,7 @@ function(   query, fulluri=NULL, dv=getOption('dvn'),
                     verbose=TRUE, ...)
                     #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
                     #cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
-        return(h$value())
+        xml <- h$value()
     }
     else if(httpverb=='DELETE'){
         # DELETE to handle dvDeleteStudy and dvDeleteFile
@@ -61,6 +60,17 @@ function(   query, fulluri=NULL, dv=getOption('dvn'),
                     writefunction = h$update, verbose=TRUE, ...)
                     #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
                     #cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
-        return(h$value())
+        xml <- h$value()
     }
+    if('html' %in% names(xmlChildren(xmlParse(xml)))){
+        temp <- htmlTreeParse(xml,useInternal=TRUE)
+        out <- 
+        c(xpathApply(temp,'//title/text()',xmlValue)[[1]],
+          xpathApply(temp,'//h1/text()',xmlValue)[[1]],
+          unlist(xpathApply(temp,'//p/text()',xmlValue)))
+        message(paste(out,'\n',collapse='\n'))
+        return(NULL)
+    }
+    else
+        return(xml)
 }
