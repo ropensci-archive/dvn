@@ -5,6 +5,12 @@ function(   dvname, xmlfile, dv=getOption('dvn'),
         stop('Must specify username (`user`) and password (`pwd`)')
     if(is.null(xmlfile) || !is.character(xmlfile))
         stop('`xmlfile` must be xml character string or path to xml file')
+    if(inherits(dvname,'dvServiceDoc')){
+        tmp <- dvServiceDoc()$dataverses$dvn
+        if(length(tmp)>1)
+            warning('Multiple dataverses available for this user. Results returned for first collection: \'',tmp[1],'\'.')
+        dvname <- tmp[1]
+    }
     if(file.exists(xmlfile))
         filetosend <- charToRaw(paste(readLines(xmlfile),collapse=""))
     else
