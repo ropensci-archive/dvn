@@ -1,6 +1,6 @@
 Package: dvn
-Version: 0.2.66
-Date: 2013-10-01
+Version: 0.2.7
+Date: 2013-10-02
 Title: Access to The Dataverse Network APIs
 Author: Thomas J. Leeper
 Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
