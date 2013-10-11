@@ -15,6 +15,7 @@
 * Fixed a bug in `dvDownload` that failed to propagate the correct dataverse to `dvDownloadInfo` (h/t Egon Willighagen)
 
 ## DOCUMENTATION ##
+* Capitalization of 'objectId' has been standardized throughout the package and documentation updated accordingly.
 * Package documenation now reports workflows for use of both the Data Sharing and Data Deposit APIs.
 
 
