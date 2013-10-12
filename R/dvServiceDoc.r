@@ -25,7 +25,7 @@ function(   dv=getOption('dvn'), user=getOption('dvn.user'),
         xmlout$generator <- xmllist$generator
         xmlout$version <- xmllist$version
         xmlout$xml <- xml
-        class(xmlout) <- 'dvServiceDoc'
+        class(xmlout) <- c(class(xmlout),'dvServiceDoc')
         return(xmlout)
     }
 }

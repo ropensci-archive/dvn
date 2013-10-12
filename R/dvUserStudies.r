@@ -26,7 +26,7 @@ function(   dvname, dv=getOption('dvn'), user=getOption('dvn.user'),
         tmp$studies <- as.data.frame(tmp$studies, stringsAsFactors=FALSE)
         tmp$studies$objectId <- sapply(tmp$studies$objectId,function(i) strsplit(i,'study/')[[1]][2])
         tmp$xml <- xml
-        class(tmp) <- 'dvUserStudies'
+        class(tmp) <- c(class(tmp),'dvUserStudies')
         return(tmp)
     }
 }

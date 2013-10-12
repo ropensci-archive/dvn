@@ -25,7 +25,7 @@ function(   objectid, dv=getOption('dvn'), user=getOption('dvn.user'),
         xmlout$files <- as.data.frame(resources, stringsAsFactors=FALSE)
         xmlout$files$fileId <- sapply(xmlout$files$src, function(i) strsplit(strsplit(i,'file/')[[1]][2],'/')[[1]][1])
         xmlout$xml <- xml
-        class(xmlout) <- 'dvStudyStatement'
+        class(xmlout) <- c(class(xmlout),'dvStudyStatement')
         return(xmlout)
     }
 }

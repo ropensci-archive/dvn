@@ -10,7 +10,7 @@ dvBuildMetadata(..., format='dcterms')
   \item{format}{A character specifying the format of the metadata XML. Default is \dQuote{dcterms}.}
 }
 %\details{}
-\value{A character string containing a complete Atom entry for use in \code{\link{dvCreateStudy}} or \code{\link{dvEditStudy}}.
+\value{A character string of class \dQuote{dvMetadata} containing a complete Atom entry for use in \code{\link{dvCreateStudy}} or \code{\link{dvEditStudy}}.
 
 Allowed fields are:
 \dQuote{abstract}, \dQuote{accessRights}, \dQuote{accrualMethod},

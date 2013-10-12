@@ -17,7 +17,7 @@ function(   objectid, dv=getOption('dvn'), user=getOption('dvn.user'),
                     id = xmllist$id)
     xmlout$objectId <- strsplit(xmlout$id,'study/')[[1]][2]
     xmlout$xml <- xml
-    class(xmlout) <- 'dvStudyAtom'
+    class(xmlout) <- c(class(xmlout),'dvStudyAtom')
     return(xmlout)
 }
 

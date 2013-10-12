@@ -26,5 +26,7 @@ dvBuildMetadata <- function(..., format='dcterms'){
         dcnode <- newXMLNode(y, x, namespace='dcterms')
     addChildren(entry, mapply(dcchild,pairls,names(pairls)))
     entry <- paste('<?xml version="1.0" encoding="UTF-8" ?>\n',toString.XMLNode(entry),sep='')
+    class(entry) <- c(class(entry),'dvMetadata')
+    attr(entry,'formatName') <- format
     return(entry)
 }
