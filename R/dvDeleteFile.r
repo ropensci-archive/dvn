@@ -7,6 +7,9 @@ function(   fileid, dv=getOption('dvn'),
                             httpverb='DELETE')
     if(is.null(xml))
 		invisible(NULL)
-	if(browser==FALSE)
-		return(xml)
+	if(browser==FALSE){
+		if(xml=='')
+            message('Operation appears to have succeeded.')
+        return(xml)
+    }
 }
