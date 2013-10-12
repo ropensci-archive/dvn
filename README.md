@@ -42,6 +42,7 @@ The core workflow for the Data Deposit API involves creating a study listing usi
 The following functions allow users to view and modify existing studies.
 * `dvServiceDoc`, to identify the dataverse(s) accessible to a user
  * This is not particularly relevant to users with access to only one dataverse.
+ * Using `dvTermsOfUse(dvServiceDoc())` displays Terms Of Use as HTML for available dataverse(s).
 * `dvUserStudies`, to list studies in a named dataverse
 * `dvStudyStatement`, to access a summary of a study (including citation and stable URI)
 * `dvStudyAtom`, to view study-level URIs for using the Data Deposit API
