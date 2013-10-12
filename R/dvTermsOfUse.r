@@ -5,7 +5,17 @@ dvTermsOfUse <- function(xml){
             browseURL(tmp)
             return(tmp)
         })
-        #x <- readline(prompt='Hit return or any key to delete temporary HTML files...')
+        Sys.sleep(1)
+        unlink(out)
+        return(invisible(xml))
+    }
+    else if(inherits(xml,'dvMetadata')){
+        f <- attributes(xml)$formatName
+        if(is.null(f) || !f=='ddi')
+            stop("Object of class 'dvMetadata' must have format 'ddi'.")
+        tmp <- xmlToList(x)$stdyDscr$dataAccs$notes$text
+        writeLines(tmp, out <- tempfile(fileext='.html'))
+        browseURL(out)
         Sys.sleep(1)
         unlink(out)
         return(invisible(xml))

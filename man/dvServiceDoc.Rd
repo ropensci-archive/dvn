@@ -16,9 +16,11 @@ dvServiceDoc(   dv=getOption('dvn'),
   \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvDepositQuery}}.}
 }
 %\details{}
-\value{A character string containing an XML data structure, which describes the dataverses available to the user and the terms of use for those dataverses.}
+\value{A character string of class \dQuote{dvServiceDoc} containing an XML data structure, which describes the dataverses available to the user and the terms of use for those dataverses.}
 %\references{}
 \author{Thomas J. Leeper}
 %\note{}
-%\seealso{}
+\seealso{
+\code{\link{dvTermsOfUse}}
+}
 %\examples{}

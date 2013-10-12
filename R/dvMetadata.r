@@ -18,6 +18,7 @@ dvMetadata <- function(objectid, format.type=NULL, include=NULL, exclude=NULL,
 	if(is.null(xml))
 		invisible(NULL)
 	else if(browser==FALSE){
+        class(xml) <- c(class(xml),'dvMetadata')
         attr(xml,'formatName') <- ifelse(!is.null(format.type),format.type,'ddi')
 		return(xml)
     }
