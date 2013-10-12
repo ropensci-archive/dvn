@@ -24,6 +24,7 @@ install_github(repo = "dvn", username = "leeper")
 * `dvMetadata`, to retrieve the metadata for a study
  * `dvMetadataFormats`, to retrieve available metadata *formats* for a study
  * `dvExtractFileIds`, to extract available files from the `dvMetadata` response
+ * Using `dvTermsOfUse(dvMetadata(objectId))` displays Terms Of Use as HTML for the study
 
 ### File Access Functions ###
 * `dvDownloadInfo`, to retrieve information about a study file
