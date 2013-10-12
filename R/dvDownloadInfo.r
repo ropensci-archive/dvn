@@ -4,7 +4,7 @@ dvDownloadInfo <- function(fileid, dv = getOption('dvn'), browser=FALSE, ...){
 	xml <- dvQuery(verb = "downloadInfo", query = fileid, dv = dv, browser=browser, ...)
 	if(is.null(xml))
 		invisible(NULL)
-	if(browser==FALSE){
+	else if(browser==FALSE){
 		details <- list()
 		services <- xpathApply(xmlParse(xml),"//accessService")
 		attrs <- xmlAttrs(xpathApply(xmlParse(xml),"//studyFile")[[1]])

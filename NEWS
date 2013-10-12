@@ -14,6 +14,7 @@
 * The default dataverse (Harvard IQSS Dataverse) is now specified as a global option, which can be user-redefined with `options('dvn')`.
 
 ## BUG FIXES ##
+* Data Sharing API functions now attempt to fail gracefully when encountering unexpected API responses.
 * Fixed a url space encoding bug in `dvSearch` that prevented the use of multiple search terms.
 * Fixed a bug in `dvDownload` that failed to propagate the correct dataverse to `dvDownloadInfo` (h/t Egon Willighagen)
 

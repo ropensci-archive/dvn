@@ -2,7 +2,7 @@ dvMetadataFormats <- function(objectid, dv = getOption('dvn'), browser=FALSE, ..
 	xml <- dvQuery(verb = "metadataFormatsAvailable", query = objectid, dv = dv, browser=browser, ...)
 	if(is.null(xml))
 		invisible(NULL)
-	if(browser==FALSE){
+	else if(browser==FALSE){
 		searchterms <- xpathApply(xmlParse(xml),"//formatAvailable")
 		if(length(searchterms)>0){
 			d <- data.frame(matrix(nrow=length(searchterms),ncol=3))

@@ -65,12 +65,12 @@ function(   query, fulluri=NULL, dv=getOption('dvn'),
             return(xml)
     }
     if('html' %in% names(xmlChildren(xmlParse(xml)))){
-        temp <- htmlTreeParse(xml,useInternal=TRUE)
+        temp <- htmlTreeParse(xml,useInternalNodes=TRUE)
         out <- 
         c(xpathApply(temp,'//title/text()',xmlValue)[[1]],
           xpathApply(temp,'//h1/text()',xmlValue)[[1]],
           unlist(xpathApply(temp,'//p/text()',xmlValue)))
-        message(paste(out,'\n',collapse='\n'))
+        message('Operation failed with the following response:\n',paste(out,'\n',collapse='\n'))
         return(NULL)
     }
     else if('error' %in% names(xmlChildren(xmlParse(xml)))){

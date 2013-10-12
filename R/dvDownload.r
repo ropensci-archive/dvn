@@ -12,18 +12,22 @@ dvDownload <- function(fileid, query=NULL, dv = getOption('dvn'), browser=FALSE,
 	}
 	else{
 		if(is.list(query)){
-			q <- ""
+			qtmp <- ""
 			for(i in 1:length(query)){
-				q <- paste(q,names(query)[i],"=",query[[i]],sep="")
+				qtmp <- paste(qtmp,names(query)[i],"=",query[[i]],sep="")
 				if(i<length(query))
-					q <- paste(q,"&",sep="")
+					qtmp <- paste(qtmp,"&",sep="")
 			}
-			query <- q
+			query <- qtmp
 		}
 		else if(is.character(query))
 			query <- query
 		else
 			stop("Must specify query as named list or character string")
 		xml <- dvQuery(verb = "download", query = paste(fileid,query,sep=""), dv = dv, browser=browser, ...)
-	}
+        if(is.null(xml))
+            invisible(NULL)
+        else if(browser==FALSE)
+            return(xml)
+    }
 }

@@ -17,6 +17,8 @@ dvMetadata <- function(objectid, format.type=NULL, include=NULL, exclude=NULL,
 	xml <- dvQuery(verb = "metadata", query = query, dv = dv, browser=browser, ...)
 	if(is.null(xml))
 		invisible(NULL)
-	if(browser==FALSE)
+	else if(browser==FALSE){
+        attr(xml,'formatName') <- ifelse(!is.null(format.type),format.type,'ddi')
 		return(xml)
+    }
 }

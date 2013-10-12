@@ -22,6 +22,16 @@ dvQuery <- function(verb, query = NULL, dv = getOption('dvn'), browser=FALSE, ..
 					#ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
 					ssl.verifypeer = FALSE, ssl.verifyhost = FALSE, ...)
 					#cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
-		return(xml)
+	    if('html' %in% names(xmlChildren(xmlParse(xml)))){
+            temp <- htmlTreeParse(xml,useInternalNodes=TRUE)
+            out <- 
+            c(xpathApply(temp,'//title/text()',xmlValue)[[1]],
+              xpathApply(temp,'//h1/text()',xmlValue)[[1]],
+              unlist(xpathApply(temp,'//p/text()',xmlValue)))
+            message('Operation failed with the following response:\n',paste(out,'\n',collapse='\n'))
+            return(NULL)
+        }
+        else
+            return(xml)
 	}
 }
