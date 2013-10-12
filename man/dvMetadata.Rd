@@ -16,7 +16,7 @@ dvMetadata(objectid, format.type = NULL, include = NULL, exclude = NULL,
   \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvQuery}}.}
 }
 %\details{}
-\value{An XML data structure containing metadata for the specified dataverse record.}
+\value{An XML data structure containing metadata for the specified dataverse record. The exact form and contents of this response depend on the \code{format.type} and any \code{include}/\code{exclude} statements.}
 %\references{}
 \author{Thomas J. Leeper}
 %\note{}
