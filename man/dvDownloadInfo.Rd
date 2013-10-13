@@ -1,5 +1,6 @@
 \name{dvDownloadInfo}
 \alias{dvDownloadInfo}
+\alias{print.dvDownloadInfo}
 \title{Retrieve file download information}
 \description{Retrieve download information for a dataverse file.}
 \usage{
@@ -12,7 +13,8 @@ dvDownloadInfo(fileid, dv = getOption('dvn'), browser = FALSE, ...)
   \item{...}{Optionally, additional arguments passed to \code{getURL} via \code{\link{dvQuery}}.}
 }
 %\details{}
-\value{A list containing details of the (potentially downloadable) file:
+\value{
+A list containing details of the (potentially downloadable) file:
   \item{fileId}{A character string containing the value of \dQuote{fileid} from the original request.}
   \item{fileName}{A character string containing the name of the requested file.}
   \item{fileMimeType}{A character string containing the MIME type of the requested file.}
@@ -23,7 +25,8 @@ dvDownloadInfo(fileid, dv = getOption('dvn'), browser = FALSE, ...)
   \item{accessServicesSupported}{A dataframe detailing the available file formats for download.}
   \item{xml}{A character string containing the original API response in XML.}
 
-Note: access restrictions on files may prevent them from being downloaded directly in R.}
+Note: access restrictions on files may prevent them from being downloaded directly in R.
+}
 %\references{}
 \author{Thomas J. Leeper}
 %\note{}
@@ -36,5 +39,3 @@ Note: access restrictions on files may prevent them from being downloaded direct
 info <- dvDownloadInfo("9956")
 }
 }
-%\keyword{ ~kwd1 }
-%\keyword{ ~kwd2 }
