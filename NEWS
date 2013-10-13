@@ -1,6 +1,7 @@
 # CHANGES TO dvn 0.3 #
 
 ## SIGNIFICANT USER-VISIBLE CHANGES ##
+* A `print` method has been added for `dvDownloadInfo` and the function additionally returns the raw value of the request. The return value of the function is otherwise unchanged.
 * `dvSearch` now supports both boolean AND and boolean OR logic to combine multiple search terms. See documentation.
 * `dvAddFile` no longer has a `filesize` argument (it being automatically calculated). The function now accepts filenames/paths (via `filename`) or dataframe names (via `dataframe`).
 * Support for the Data Deposit API has been added in the form of a `dvDepositQuery` workhorse function and some wrappers that search a user's dataverse(s): `dvServiceDoc`, `dvUserStudies`, `dvStudyAtom`, and `dvStudyStatement`. Functions to create, release, and delete studies are also supported: `dvCreateStudy`, `dvReleaseStudy`, and `dvDeleteStudy`.
@@ -19,6 +20,7 @@
 * Fixed a bug in `dvDownload` that failed to propagate the correct dataverse to `dvDownloadInfo` (h/t Egon Willighagen)
 
 ## DOCUMENTATION ##
+* Documentation for `dvDownloadInfo` now provides more detail on its return value.
 * Capitalization of 'objectId' has been standardized throughout the package and documentation updated accordingly.
 * Package documenation now reports workflows for use of both the Data Sharing and Data Deposit APIs.
 
