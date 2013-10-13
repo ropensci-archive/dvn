@@ -3,7 +3,7 @@
 \alias{dvn}
 \docType{package}
 \title{Access to The Dataverse Network APIs}
-\description{Provides access to The Dataverse Network Data Sharing and Data Deposit APIs via the RCurl package.
+\description{Provides access to The Dataverse Network Data Sharing and Data Deposit APIs via RCurl.
 
 The Data Sharing API provides access to archived data (and metadata). The dvn package provides a number of functions to translate API responses into R data structures using the XML package.
 
@@ -12,8 +12,8 @@ The Data Deposit API provides the ability to create and modify Dataverse studies
 \tabular{ll}{
 Package: \tab dvn\cr
 Type: \tab Package\cr
-Version: \tab 0.2.8\cr
-Date: \tab 2013-10-12\cr
+Version: \tab 0.2.9\cr
+Date: \tab 2013-10-13\cr
 License: \tab GPL-2\cr
 }
 }
@@ -66,15 +66,15 @@ Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
     dvServiceDoc()
     
     # Retrieve available studies in a user's dataverse with either:
-    dvUserStudies("mydataverse")
+    user <- dvUserStudies("mydataverse")
     # Or:
-    dvUserStudies(dvServiceDoc())
+    user <- dvUserStudies(dvServiceDoc())
     
     # retrieve a 'Study Atom', providing the citation for a study
-    dvStudyAtom("hdl:1902.1/17864")
+    dvStudyAtom(user$studies$objectId)
     
     # retrieve a 'Study Statement' providing files stored in a study
-    dvStudyStatement("hdl:1902.1/17864")
+    dvStudyStatement(user$studies$objectId)
 }
 \dontrun{
     ## Create a study, add files, and release:
