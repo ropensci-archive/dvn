@@ -35,6 +35,19 @@ dvDownloadInfo <- function(fileid, dv = getOption('dvn'), browser=FALSE, ...){
 			details$accessServicesSupported$serviceDesc[i] <- xmlValue(tmp$serviceDesc)
 		}
         details$xml <- xml
+        class(details) <- c(class(details),'dvDownloadInfo')
 		invisible(details)
 	}
+}
+
+print.dvDownloadInfo <- function(x,...){
+    cat('File Name:      ',x$fileName,'\n')
+    cat('File ID:        ',x$fileId,'\n')
+    cat('File Type:      ',x$fileMimeType,'\n')
+    cat('File Size:      ',x$fileSize,'\n')
+    cat('Authentication: ',x$authMethod,'\n')
+    cat('Direct Access?   ',x$directAccess,':\n',x$accessRestrictions,'\n',sep='')
+    cat('Access Services:\n')
+    print(x$accessServicesSupported)
+    invisible(x)
 }
