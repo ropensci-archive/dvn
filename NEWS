@@ -1,3 +1,9 @@
+# CHANGES TO dv 0.4 #
+
+## BUG FIXES ##
+* New versions of libcurl (>7.28) deprecate boolean values for options (e.g., SSL_VERIFYPEER and SSL_VERIFYHOST). `dvQuery` and `dvDepositQuery` were returning errors due to this and has been updated. Everything is backwards compatible to earlier versions of libcurl.
+
+
 # CHANGES TO dvn 0.3 #
 
 ## SIGNIFICANT USER-VISIBLE CHANGES ##

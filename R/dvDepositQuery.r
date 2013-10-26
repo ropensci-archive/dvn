@@ -28,16 +28,16 @@ function(   query, fulluri=NULL, dv=getOption('dvn'),
     else if(browser==TRUE)
         stop('If httpverb != GET, browser must be FALSE')
     else if(httpverb=='GET'){
-        xml <- getURL(url, followlocation = TRUE, userpwd=userpwd,
-                    ssl.verifypeer = FALSE, ssl.verifyhost = FALSE, ...)
+        xml <- getURL(url, followlocation = 1L, userpwd=userpwd,
+                    ssl.verifypeer = 0L, ssl.verifyhost = 0L, ...)
                     #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
                     #cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
     }
     else if(httpverb=='POST'){
         # POST to handle dvCreateStudy and dvAddFile
         h <- basicTextGatherer()
-        xml <- curlPerform(url = url, userpwd=userpwd, customrequest = 'POST', followlocation = TRUE, 
-                    ssl.verifypeer = FALSE, ssl.verifyhost = FALSE, writefunction = h$update, verbose=TRUE, ...)
+        xml <- curlPerform(url = url, userpwd=userpwd, customrequest = 'POST', followlocation = 1L, 
+                    ssl.verifypeer = 0L, ssl.verifyhost = 0L, writefunction = h$update, ...)
                     #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
                     #cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
         xml <- h$value()
@@ -45,9 +45,8 @@ function(   query, fulluri=NULL, dv=getOption('dvn'),
     else if(httpverb=='PUT'){
         # PUT to handle dvEditStudy
         h <- basicTextGatherer()
-        xml <- curlPerform(url = url, userpwd=userpwd, followlocation = TRUE, customrequest = 'PUT', 
-                    ssl.verifypeer = FALSE, ssl.verifyhost = FALSE, writefunction = h$update,
-                    verbose=TRUE, ...)
+        xml <- curlPerform(url = url, userpwd=userpwd, followlocation = 1L, customrequest = 'PUT', 
+                    ssl.verifypeer = 0L, ssl.verifyhost = 0L, writefunction = h$update, ...)
                     #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
                     #cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
         xml <- h$value()
@@ -55,9 +54,8 @@ function(   query, fulluri=NULL, dv=getOption('dvn'),
     else if(httpverb=='DELETE'){
         # DELETE to handle dvDeleteStudy and dvDeleteFile
         h <- basicTextGatherer()
-        xml <- curlPerform(url = url, userpwd=userpwd, followlocation = TRUE, customrequest = 'DELETE',
-                    ssl.verifypeer = FALSE, ssl.verifyhost = FALSE,
-                    writefunction = h$update, verbose=TRUE, ...)
+        xml <- curlPerform(url = url, userpwd=userpwd, followlocation = 1L, customrequest = 'DELETE',
+                    ssl.verifypeer = 0L, ssl.verifyhost = 0L, writefunction = h$update, ...)
                     #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
                     #cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
         xml <- h$value()
