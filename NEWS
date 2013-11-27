@@ -1,4 +1,7 @@
-# CHANGES TO dv 0.4 #
+# CHANGES TO dvn 0.4 #
+
+## SIGNIFICANT USER-VISIBLE CHANGES ##
+* `dvSearch` now supports searching in all metadata fields simultaneously by supplying a list with a single, unnamed element. See documentation.
 
 ## BUG FIXES ##
 * New versions of libcurl (>7.28) deprecate boolean values for options (e.g., SSL_VERIFYPEER and SSL_VERIFYHOST). `dvQuery` and `dvDepositQuery` were returning errors due to this and has been updated. Everything is backwards compatible to earlier versions of libcurl.
