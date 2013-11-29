@@ -18,8 +18,8 @@ dvQuery <- function(verb, query = NULL, dv = getOption('dvn'), browser=FALSE, ..
 	if(browser)
 		browseURL(url)
 	else{
-	    user <- getOptions('dvn.user')
-	    pwd <- getOptions('dvn.pwd')
+	    user <- getOption('dvn.user')
+	    pwd <- getOption('dvn.pwd')
 	    if(!user=='' && !pwd=='')
 	    	userpwd <- paste(user,pwd,sep=':')
 	    else
