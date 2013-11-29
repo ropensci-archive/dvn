@@ -15,11 +15,16 @@ dvExtractFileIds <- function(xml){
 		dims <- xmlChildren(xmlChildren(xmlChildren(i)$fileTxt)$dimensns)
 		caseQnty <- xmlValue(dims$caseQnty)
 		varQnty <- xmlValue(dims$varQnty)
-        return(list(fileName=fileName,
-                    fileId=fileId,
-                    URI=URI,
-                    caseQnty=caseQnty,
-                    varQnty=varQnty))
+        notes <- xmlChildren(i)[names(xmlChildren(i))=='notes']
+        fingerprint <- 
+            xmlValue(notes[sapply(notes, function(i)
+                'Universal Numeric Fingerprint' %in% xmlAttrs(i))]$notes)
+        return(list(fileName = fileName,
+                    fileId = fileId,
+                    UNF = fingerprint,
+                    URI = URI,
+                    caseQnty = caseQnty,
+                    varQnty = varQnty))
     })
     d <- do.call(rbind.data.frame, d)
     rownames(d) <- NULL
@@ -38,5 +43,5 @@ dvExtractFileIds <- function(xml){
     e <- do.call(rbind.data.frame, e)
     rownames(e) <- NULL
     
-    return(merge(d, e, all=TRUE))
+    return(merge(d, e, all=TRUE)[,c('fileName','fileId','UNF','caseQnty','varQnty','URI')])
 }
