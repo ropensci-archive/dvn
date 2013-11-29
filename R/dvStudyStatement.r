@@ -19,11 +19,14 @@ function(   objectid, dv=getOption('dvn'), user=getOption('dvn.user'),
             xmlout[tmp[1,i]] <- tmp[2,i]
         rm(tmp)
         tmp <- xml.list[names(xml.list)=='entry']
-        resources <- t(sapply(tmp, function(i) c(i$content, title=i$title$text, summary=i$summary$text, updated=i$updated)))
-        rownames(resources) <- seq(1,nrow(resources))
-        rm(tmp)
-        xmlout$files <- as.data.frame(resources, stringsAsFactors=FALSE)
-        xmlout$files$fileId <- sapply(xmlout$files$src, function(i) strsplit(strsplit(i,'file/')[[1]][2],'/')[[1]][1])
+        if(length(tmp)>1){
+            resources <- t(sapply(tmp, function(i) c(i$content, title=i$title$text, summary=i$summary$text, updated=i$updated)))
+            rownames(resources) <- seq(1,nrow(resources))
+            rm(tmp)
+            xmlout$files <- as.data.frame(resources, stringsAsFactors=FALSE)
+            xmlout$files$fileId <- sapply(xmlout$files$src, function(i) strsplit(strsplit(i,'file/')[[1]][2],'/')[[1]][1])
+        } else
+            xmlout$files <- NULL
         xmlout$xml <- xml
         class(xmlout) <- c(class(xmlout),'dvStudyStatement')
         return(xmlout)
@@ -38,7 +41,10 @@ print.dvStudyStatement <- function(x,...){
     cat('Last updated: ',x$updated,'\n')
     cat('Status:       ',x$latestVersionState,'\n')
     cat('Locked?       ',x$locked,'\n')
-    cat('Files:\n')
-    print(x$files[,c('src','type','updated','fileId')], right=FALSE)
+    if(!is.null(x$files)){
+        cat('Files:\n')
+        print(x$files[,c('src','type','updated','fileId')], right=FALSE)
+    } else
+        cat('Files:         None\n')
     invisible(x)
 }
