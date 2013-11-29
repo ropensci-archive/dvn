@@ -3,8 +3,8 @@ dvSearch <- function(query, boolean='AND', dv = getOption('dvn'), browser=FALSE,
 		stop("Must specify query as named list or character string")
 	else{
 		if(is.list(query)){
-			if(length(query)==1 && is.null(names(query)))
-                query <- paste(dvSearchFields()$fieldName,query[[1]],sep=':', collapse='%20OR%20')
+            if(length(query)==1 && is.null(names(query)))
+			    query <- query
             else{
                 qtmp <- ""
                 for(i in 1:length(query)){
@@ -16,7 +16,7 @@ dvSearch <- function(query, boolean='AND', dv = getOption('dvn'), browser=FALSE,
             }
 		}
 		else if(is.character(query))
-			query <- query
+			query <- paste(dvSearchFields()$fieldName,query[[1]],sep=':', collapse='%20OR%20')
 		else
 			stop("Must specify query as named list or character string")
 	}

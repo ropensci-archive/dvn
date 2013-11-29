@@ -6,7 +6,7 @@
 dvSearch(query, boolean = "AND", dv = getOption('dvn'), browser = FALSE, ...)
 }
 \arguments{
-  \item{query}{Either a list of named search parameters or an appropriately formatted character string of search parameters. Search parameters can be retrieved via \code{\link{dvSearchFields}}. If specified as a list with a single, unnamed element, the search is performed on all available fields using a boolean OR logic.}
+  \item{query}{Either a list of named search parameters or an unnamed, one-element list containing an appropriately formatted character string of search parameters. Search parameters can be retrieved via \code{\link{dvSearchFields}}. If specified as a single character string, the search is performed on all available fields using a boolean OR logic.}
   \item{boolean}{A character string specifying the boolean \dQuote{AND} (the default) or \dQuote{OR} by which multiple values in the \code{query} parameter should be combined. Ignored if \code{query} is a single character string or one-element list.}
   \item{dv}{An optional character string specifying the Dataverse to query. Default is the Harvard IQSS Dataverse.}
   \item{browser}{A logical specifying whether the query should be executed in a web browser. Default is \code{FALSE}.}
@@ -22,9 +22,9 @@ dvSearch(query, boolean = "AND", dv = getOption('dvn'), browser = FALSE, ...)
 }
 \examples{
 \dontrun{
-search1 <- dvSearch("authorName:leeper")
+search1 <- dvSearch(list("authorName:leeper"))
 search2 <- dvSearch(list(title="Denmark",title="Sweden"),boolean="OR")
-search3 <- dvSearch(list("puppies"))
+search3 <- dvSearch("puppies")
 }
 }
 %\keyword{ ~kwd1 }

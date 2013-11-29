@@ -1,7 +1,7 @@
 # CHANGES TO dvn 0.4 #
 
 ## SIGNIFICANT USER-VISIBLE CHANGES ##
-* `dvSearch` now supports searching in all metadata fields simultaneously by supplying a list with a single, unnamed element. See documentation.
+* `dvSearch` now supports searching in all metadata fields simultaneously by supplying a single character string, whereas a list containing a single, unnamed element is now treated as a valid query string (a change from how character strings were handled in versions < 0.3). See documentation.
 
 ## BUG FIXES ##
 * Fixed a RCurl-related bug in `dvQuery` that prevented basic authentication for the Data Sharing API. `dvQuery` now uses username and password options, when specified, to authenticate requests.
