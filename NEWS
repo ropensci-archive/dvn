@@ -1,6 +1,7 @@
 # CHANGES TO dvn 0.4 #
 
 ## SIGNIFICANT USER-VISIBLE CHANGES ##
+* `dvExtractFileIds` now extracts non-data files from DDI-formatted metadata (returned by `dvMetadata`). (#16)
 * `dvSearch` now supports searching in all metadata fields simultaneously by supplying a single character string, whereas a list containing a single, unnamed element is now treated as a valid query string (a change from how character strings were handled in versions < 0.3). See documentation.
 
 ## BUG FIXES ##
