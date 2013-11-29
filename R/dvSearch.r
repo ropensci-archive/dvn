@@ -16,7 +16,7 @@ dvSearch <- function(query, boolean='AND', dv = getOption('dvn'), browser=FALSE,
             }
 		}
 		else if(is.character(query))
-			query <- curlEscape(paste(dvSearchFields()$fieldName,query[[1]],sep=':', collapse='%20OR%20'))
+			query <- paste(dvSearchFields()$fieldName,curlEscape(query[1]),sep=':', collapse='%20OR%20')
 		else
 			stop("Must specify query as named list or character string")
 	}
