@@ -43,5 +43,10 @@ dvExtractFileIds <- function(xml){
     e <- do.call(rbind.data.frame, e)
     rownames(e) <- NULL
     
-    return(merge(d, e, all=TRUE)[,c('fileName','fileId','UNF','caseQnty','varQnty','URI')])
+    if(length(d)>0 && length(e)>0)
+        return(merge(d, e, all=TRUE)[,c('fileName','fileId','UNF','caseQnty','varQnty','URI')])
+    else if(length(d)>0)
+        return(d)
+    else
+        return(e)
 }
