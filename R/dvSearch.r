@@ -8,7 +8,7 @@ dvSearch <- function(query, boolean='AND', dv = getOption('dvn'), browser=FALSE,
             else{
                 qtmp <- ""
                 for(i in 1:length(query)){
-                    qtmp <- paste(qtmp,names(query)[i],":",query[[i]],sep="")
+                    qtmp <- paste(qtmp,names(query)[i],":",curlEscape(query[[i]]),sep="")
                     if(i<length(query))
                         qtmp <- paste(qtmp,"%20",boolean,"%20",sep="")
                 }
@@ -16,13 +16,13 @@ dvSearch <- function(query, boolean='AND', dv = getOption('dvn'), browser=FALSE,
             }
 		}
 		else if(is.character(query))
-			query <- paste(dvSearchFields()$fieldName,query[[1]],sep=':', collapse='%20OR%20')
+			query <- curlEscape(paste(dvSearchFields()$fieldName,query[[1]],sep=':', collapse='%20OR%20'))
 		else
 			stop("Must specify query as named list or character string")
 	}
 	xml <- dvQuery(verb = "metadataSearch", query = query, dv = dv, browser=browser, ...)
 	if(is.null(xml))
-		invisible(NULL)
+		return(NULL)
 	else if(browser==FALSE){
 		results <- unlist(xpathApply(xmlParse(xml),"//study", fun=xmlAttrs))
 		if(length(results))
