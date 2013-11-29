@@ -1,7 +1,7 @@
 dvQuery <- function(verb, query = NULL, dv = getOption('dvn'), browser=FALSE, ...){
 	# Data Sharing API workhorse query function
 	if(!verb %in% c("metadataSearchFields", "metadataSearch", "metadataFormatsAvailable", "metadata", "downloadInfo", "download"))
-		stop("API query verb not recognized")
+		warning("API query verb not recognized")
 	if(is.null(dv) || dv=="")
 		stop("Must specify Dataverse URL as 'dv'")
 	else{
