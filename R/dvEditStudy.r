@@ -13,7 +13,7 @@ function(   objectid, xmlfile, dv=getOption('dvn'),
                             httpverb='PUT', postfields=filetosend,
                             httpheader=c('Content-Type'='application/atom+xml'))
     if(is.null(xml))
-		invisible(NULL)
-	if(browser==FALSE)
-		.dvParseAtom(xml)
+        return(NULL)
+    if(browser==FALSE)
+        .dvParseAtom(xml)
 }
