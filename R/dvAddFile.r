@@ -26,7 +26,7 @@ function(   objectid, filename=NULL, dataframe=NULL, dv=getOption('dvn'),
                             'Content-Type'='application/zip',
                             'Packaging'='http://purl.org/net/sword/package/SimpleZip'))
     if(is.null(xml))
-		invisible(NULL)
+		return(NULL)
 	if(browser==FALSE)
 		.dvParseAtom(xml)
 }
