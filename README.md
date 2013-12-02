@@ -20,11 +20,11 @@ install_github(repo = "dvn", username = "leeper")
 ## Functions for the Data Sharing API ##
 ### Metadata Search Functions ###
 * `dvSearch`, to search public dataverses
- * `dvSearchFields`, to provide the searchable fields for use in `dvSearch`
+  * `dvSearchFields`, to provide the searchable fields for use in `dvSearch`
 * `dvMetadata`, to retrieve the metadata for a study
- * `dvMetadataFormats`, to retrieve available metadata *formats* for a study
- * `dvExtractFileIds`, to extract available files from the `dvMetadata` response
- * Using `dvTermsOfUse(dvMetadata(objectId))` displays Terms Of Use as HTML for the study
+  * `dvMetadataFormats`, to retrieve available metadata *formats* for a study
+  * `dvExtractFileIds`, to extract available files from the `dvMetadata` response
+  * Using `dvTermsOfUse(dvMetadata(objectId))` displays Terms Of Use as HTML for the study
 
 ### File Access Functions ###
 * `dvDownloadInfo`, to retrieve information about a study file
@@ -35,18 +35,15 @@ install_github(repo = "dvn", username = "leeper")
 The core workflow for the Data Deposit API involves creating a study listing using `dvCreateStudy`, adding one or more files with `dvAddFile`, and then making the study public with `dvReleaseStudy`. Use of all Data Deposit API functions requires a valid username and password for the selected Dataverse Network, which can be set in each function call or globally using `options(dvn.user = 'username', dvn.pwd = 'password')`.
 
 * `dvCreateStudy`, to create a study listing using metadata (i.e., cataloging information)
- * Use `dvBuildMetadata` to create metadata for use in `dvCreateStudy` or `dvEditStudy`
- * Use `dvEditStudy` to overwrite a study's metadata
+  * Use `dvBuildMetadata` to create metadata for use in `dvCreateStudy` or `dvEditStudy`
+  * Use `dvEditStudy` to overwrite a study's metadata
 * `dvAddFile`, to add file(s) or active R dataframes to a study
 * `dvReleaseStudy`, to publicly release a study
 
 The following functions allow users to view and modify existing studies:
-* `dvServiceDoc`, to identify the dataverse(s) accessible to a user
- * This is not particularly relevant to users with access to only one dataverse
- * Using `dvTermsOfUse(dvServiceDoc())` displays Terms Of Use as HTML for available dataverse(s)
-* `dvUserStudies`, to list studies in a named dataverse
-* `dvStudyStatement`, to access a summary of a study (including citation and stable URI)
-* `dvStudyAtom`, to view study-level URIs for using the Data Deposit API
- * This is not important for most users, unless they plan to call `dvDepositQuery` directly
 * `dvDeleteFile`, to delete a file from a study
 * `dvDeleteStudy`, to deaccession a released study, or delete an unreleased study
+* `dvUserStudies`, to list studies in a named dataverse
+* `dvStudyStatement`, to access a summary of a study (including citation and stable URI)
+* `dvServiceDoc`, to identify the dataverse(s) accessible to a user (This is not particularly relevant to users with access to only one dataverse)
+* `dvStudyAtom`, to view study-level URIs for using the Data Deposit API (This is not important for most users, unless they plan to call `dvDepositQuery` directly)
