@@ -37,7 +37,8 @@ function(   objectid, filename=NULL, dataframe=NULL, category=NULL, dv=getOption
     xml <- dvDepositQuery(  query=paste('edit-media/study/',objectid,sep=''),
             user=user, pwd=pwd, dv=dv, browser=browser,
             httpverb='POST', #upload=TRUE,
-            postfields=readBin(tmpzip,what='raw',file.info(tmpzip)$size),
+            #postfields=readBin(tmpzip,what='raw',file.info(tmpzip)$size),
+            postfields=readBin(tmpzip,what='raw'),
             httpheader=c(   'Content-Disposition'=paste('attachment; filename',basename(tmpzip),sep='='),
                             'Content-Type'='application/zip',
                             'Packaging'='http://purl.org/net/sword/package/SimpleZip'))
