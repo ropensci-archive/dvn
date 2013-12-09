@@ -1,5 +1,5 @@
 dvBuildMetadata <- function(..., format='dcterms'){
-    if(format=='dcterms')
+    if(format=='dcterms'){
         pairls <- list(...)
         dublincore <- c(
             "abstract","accessRights","accrualMethod","accrualPeriodicity",
