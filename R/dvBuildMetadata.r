@@ -1,4 +1,4 @@
-dvBuildMetadata <- function(..., format='dcterms'){
+dvBuildMetadata <- function(..., format='dcterms', validate=FALSE){
     if(format=='dcterms'){
         pairls <- list(...)
         dublincore <- c(
@@ -24,6 +24,10 @@ dvBuildMetadata <- function(..., format='dcterms'){
             dcnode <- newXMLNode(y, x, namespace='dcterms')
         addChildren(entry, mapply(dcchild,pairls,names(pairls)))
         entry <- paste('<?xml version="1.0" encoding="UTF-8" ?>\n',toString.XMLNode(entry),sep='')
+        if(validate) {
+            # run an XML schema validation
+            #valid <- xmlSchemaValidate('http://purl.org/dc/terms/', entry)
+        }
         class(entry) <- c(class(entry),'dvMetadata')
         attr(entry,'formatName') <- format
         return(entry)
@@ -66,10 +70,10 @@ dvBuildMetadata <- function(..., format='dcterms'){
                                 intrvl=vclass[i])
             location <- newXMLNode('location', attrs = c(fileid = n$filename), parent=var)
             labl <- newXMLNode('labl', varlabels[i], attrs = c(level = 'variable'), parent=var)
-            if( inherits(df[,i], 'character') | inherits(df[,i], 'AsIs')){
-                varFormat <- newXMLNode('varFormat', attrs = c(type = 'character'), parent=var)
-            } else if(inherits(df[,i], 'numeric') | inherits(df[,i], 'integer')){
+            if(inherits(df[,i], 'numeric') | inherits(df[,i], 'integer')){
                 varFormat <- newXMLNode('varFormat', attrs = c(type = 'numeric'), parent=var)
+            } else if( inherits(df[,i], 'character') | inherits(df[,i], 'AsIs')){
+                varFormat <- newXMLNode('varFormat', attrs = c(type = 'character'), parent=var)
             } else if(inherits(df[,i], 'factor')){
                 sapply(levels(df[,i]), function(i){
                     catgry <- newXMLNode('catgry', parent = var)
@@ -83,8 +87,52 @@ dvBuildMetadata <- function(..., format='dcterms'){
         }
         
         entry <- paste('<?xml version="1.0" encoding="UTF-8" ?>\n',toString.XMLNode(entry),sep='')
+        if(validate) {
+            # run an XML schema validation
+            #valid <- xmlSchemaValidate('http://www.icpsr.umich.edu/DDI', entry)
+        }
         class(entry) <- c(class(entry),'dvMetadata')
         attr(entry,'formatName') <- 'ddi'
+        return(entry)
+    } else if(format=='spss_controlcard') {
+        warning('Support for SPSS control card is still experimental')
+        
+        # http://guides.thedata.org/book/csv-data-spss-style-control-card-0
+        
+        n <- list(...)
+        
+        entry <- ''
+        entry <- paste(entry, 'data list list(',')\n')
+        
+        # data formats
+        # A8 8 byte character string;
+        # A character string;
+        # f10.2 numeric value, 10 decimal digits, with 2 fractional digits;
+        # f8 defaults to F8.0
+        # F defaults to F.0, i.e., numeric integer value
+        # 2 defaults to F.2, i.e., numeric float value with 2 fractional digits.
+        # 
+        # DATE                            yyyy-MM-dd
+        # DATETIME                        yyyy-MM-dd HH:mm:ss
+        entry <- paste(entry, '\n.\n')
+        
+        
+        # variable formats
+        entry <- paste(entry, 'VARIABLE LABELS\n')
+        entry <- paste(entry, '\n.\n')
+        
+        
+        # value labels
+        
+        # missing values
+        
+        # number of cases
+        entry <- paste(entry, 'NUMBER of CASES', dim(n$df)[1])
+        
+        ## NEED TO STRIP COMMAS FROM ALL CHARACTER STRINGS
+        
+        class(entry) <- c(class(entry),'dvMetadata')
+        attr(entry,'formatName') <- 'spss'
         return(entry)
         
     } else
