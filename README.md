@@ -8,7 +8,7 @@ The Data Deposit API allows users to directly create and modify dataverse listin
 
 **dvn** defaults to providing access to the [Harvard Dataverse Network](https://thedata.harvard.edu/dvn/), but this can be changed in each function call or globally using `options(dvn = 'https://thedata.harvard.edu/dvn/')` for any valid [Dataverse Network](http://thedata.org/book/dataverse-networks-around-world).
 
-Users interested in downloading metadata from archives other than Dataverse may be interested in Kurt Hornik's [OAIHarvester](http://cran.r-project.org/web/packages/OAIHarvester/index.html), which offers metadata download from any web repository that is compliant with the [Open Archives Initiative](http://www.openarchives.org/) standards. Additionally, [rdryad](http://cran.fhcrc.org/web/packages/rdryad/index.html) uses OAIHarvester to interface with [Dryad](http://datadryad.org/).
+Users interested in downloading metadata from archives other than Dataverse may be interested in Kurt Hornik's [OAIHarvester](http://cran.r-project.org/web/packages/OAIHarvester/index.html), which offers metadata download from any web repository that is compliant with the [Open Archives Initiative](http://www.openarchives.org/) standards. Additionally, [rdryad](http://cran.fhcrc.org/web/packages/rdryad/index.html) uses OAIHarvester to interface with [Dryad](http://datadryad.org/). The [rfigshare](http://cran.r-project.org/web/packages/rfigshare/) package works in a similar spirit to **dvn** with [http://figshare.com/](http://figshare.com/).
 
 ## Installation ##
 
