@@ -7,7 +7,8 @@ dvBuildMetadata(..., format='dcterms')
 }
 \arguments{
   \item{...}{One or more named metadata fields. \dQuote{title} is required. Any other fields are optional, but must be in Qualified Dublin Core.}
-  \item{format}{A character specifying the format of the metadata XML. Default is \dQuote{dcterms}.}
+  \item{format}{A character specifying the format of the metadata XML. Default is \dQuote{dcterms}. Currently ignored.}
+  \item{validate}{A logical indicating whether to validate the resulting metadata. Default is \dQuote{FALSE}.}
 }
 %\details{}
 \value{A character string of class \dQuote{dvMetadata} containing a complete Atom entry for use in \code{\link{dvCreateStudy}} or \code{\link{dvEditStudy}}.
