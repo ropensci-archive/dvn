@@ -3,7 +3,7 @@
 \title{Build the Atom object to create or edit a study.}
 \description{Build the Qualified Dublin Core Atom XML object needed for \code{\link{dvCreateStudy}} or \code{\link{dvEditStudy}}.}
 \usage{
-dvBuildMetadata(..., format='dcterms')
+dvBuildMetadata(..., format='dcterms', validate = FALSE)
 }
 \arguments{
   \item{...}{One or more named metadata fields. \dQuote{title} is required. Any other fields are optional, but must be in Qualified Dublin Core.}
