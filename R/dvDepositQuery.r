@@ -29,9 +29,8 @@ function(   query, fulluri=NULL, dv=getOption('dvn'),
         stop('If httpverb != GET, browser must be FALSE')
     else if(httpverb=='GET'){
         xml <- getURL(url, followlocation = 1L, userpwd=userpwd,
-                    ssl.verifypeer = 0L, ssl.verifyhost = 0L, ...)
-                    #ssl.verifypeer = TRUE, ssl.verifyhost = TRUE,
-                    #cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
+                    ssl.verifypeer = 0L, ssl.verifyhost = 2L,
+                    cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"), ...)
     }
     else if(httpverb=='POST'){
         # POST to handle dvCreateStudy and dvAddFile

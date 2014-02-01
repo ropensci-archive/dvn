@@ -25,8 +25,8 @@ dvQuery <- function(verb, query = NULL, dv = getOption('dvn'), browser=FALSE, ..
 	    else
 	    	userpwd <- NULL
 	    xml <- getURL(url, followlocation = 1L, httpauth=1L, userpwd=userpwd,
-	                       ssl.verifypeer = 0L, ssl.verifyhost = 0L, ...)
-                               #cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
+	                       ssl.verifypeer = 0L, ssl.verifyhost = 2L,
+                           cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"), ...)
 	    if('html' %in% names(xmlChildren(xmlParse(xml)))){
             temp <- htmlTreeParse(xml,useInternalNodes=TRUE)
             out <- 
