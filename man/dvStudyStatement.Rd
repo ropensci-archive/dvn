@@ -9,7 +9,7 @@ dvStudyStatement(   objectid, dv=getOption('dvn'),
                     browser=FALSE, ...)
 }
 \arguments{
-  \item{objectid}{A character string containing the id for a dataverse study (a handle). This could be returned from \code{\link{dvUserStudies}} (or, \code{\link{dvSearch}}, from the Data Sharing API).}
+  \item{objectid}{Either a character string containing the id for a dataverse study (a handle) or an object of class \dQuote{dvStudyAtom}. This could be returned from \code{\link{dvUserStudies}} (or, \code{\link{dvSearch}}, from the Data Sharing API).}
   \item{dv}{An optional character string specifying the Dataverse to query. Default is the Harvard IQSS Dataverse.}
   \item{user}{A character string containing a dataverse username. Default is \code{options('dvn.user')}.}
   \item{pwd}{A character string containing the corresponding dataverse password. Default is \code{options('dvn.pwd')}.}

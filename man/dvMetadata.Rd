@@ -7,7 +7,7 @@ dvMetadata(objectid, format.type = NULL, include = NULL, exclude = NULL,
 			dv = getOption('dvn'), browser = FALSE, ...)
 }
 \arguments{
-  \item{objectid}{A dataverse object ID.}
+  \item{objectid}{Either a character string containing the id for a dataverse study (a handle) or an object of class \dQuote{dvStudyAtom}. This could be returned from \code{\link{dvUserStudies}} (or, \code{\link{dvSearch}}, from the Data Sharing API).}
   \item{format.type}{An optional character string specifying the format of the returned metadata. Available options can be retrieved with \code{\link{dvMetadataFormats}}. If \code{NULL}, \dQuote{ddi} is used by default.}
   \item{include}{An optional character string specifying what metadata to include in the response.}
   \item{exclude}{An optional character string specifying what metadata to exclude from the response.}

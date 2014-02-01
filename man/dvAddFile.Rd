@@ -9,7 +9,7 @@ dvAddFile(  objectid, filename=NULL, dataframe=NULL, category=NULL,
             browser=FALSE, ...)
 }
 \arguments{
-  \item{objectid}{A character string containing the id for a dataverse study (a handle). This could be returned from \code{\link{dvUserStudies}}, \code{\link{dvCreateStudy}}, (or, \code{\link{dvSearch}}, from the Data Sharing API).}
+  \item{objectid}{Either a character string containing the id for a dataverse study (a handle) or an object of class \dQuote{dvStudyAtom}. This could be returned from \code{\link{dvUserStudies}} (or, \code{\link{dvSearch}}, from the Data Sharing API).}
   \item{filename}{The path to a .zip file to be uploaded, or a vector of filenames (or paths) that will be compressed then uploaded.}
   \item{dataframe}{A character string (or vector of character strings) containing the names of dataframe(s) to be saved and uploaded. Files are named by their R object names, so a dataframe called \code{df} will become \dQuote{df.RData}.}
   \item{category}{An optional character string containing a category to be used in uploading the files to Dataverse. For example, \dQuote{Data} or \dQuote{Codebook}. This can be used to organize files in the web browser interface. Must be valid as a path on the local OS, so it should not contain slashes or most other punctuation. If \code{NULL}, the default is \dQuote{Files}.}

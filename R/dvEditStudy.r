@@ -1,6 +1,8 @@
 dvEditStudy <-
 function(   objectid, xmlfile, dv=getOption('dvn'),
             user=getOption('dvn.user'), pwd=getOption('dvn.pwd'), browser=FALSE, ...){
+    if(inherits(objectid, 'dvStudyAtom'))
+        objectid <- objectid$objectId
     if(is.null(user) | is.null(pwd))
         stop('Must specify username (`user`) and password (`pwd`)')
     if(is.null(xmlfile) || !is.character(xmlfile))

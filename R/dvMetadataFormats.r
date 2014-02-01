@@ -1,5 +1,7 @@
 dvMetadataFormats <- function(objectid, dv = getOption('dvn'), browser=FALSE, ...){
-	xml <- dvQuery(verb = "metadataFormatsAvailable", query = objectid, dv = dv, browser=browser, ...)
+	if(inherits(objectid, 'dvStudyAtom'))
+        objectid <- objectid$objectId
+    xml <- dvQuery(verb = "metadataFormatsAvailable", query = objectid, dv = dv, browser=browser, ...)
 	if(is.null(xml))
 		invisible(NULL)
 	else if(browser==FALSE){

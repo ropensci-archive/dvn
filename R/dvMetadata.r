@@ -1,6 +1,8 @@
 dvMetadata <- function(objectid, format.type=NULL, include=NULL, exclude=NULL,
 						dv = getOption('dvn'), browser=FALSE, ...){
-	if(is.null(format.type)){
+	if(inherits(objectid, 'dvStudyAtom'))
+        objectid <- objectid$objectId
+    if(is.null(format.type)){
 		query <- objectid
 		if(!is.null(include))
 			query <- paste(query,"/?partialInclude=",include,sep="")

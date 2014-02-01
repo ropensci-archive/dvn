@@ -1,6 +1,8 @@
 dvAddFile <-
 function(   objectid, filename=NULL, dataframe=NULL, category=NULL, dv=getOption('dvn'),
             user=getOption('dvn.user'), pwd=getOption('dvn.pwd'), browser=FALSE, ...){
+    if(inherits(objectid, 'dvStudyAtom'))
+        objectid <- objectid$objectId
     if(is.null(category))
         catdir <- file.path(normalizePath(tempdir(),winslash='/'),'Files')
     else{
