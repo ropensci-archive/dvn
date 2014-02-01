@@ -10,15 +10,17 @@ The Data Deposit API allows users to directly create and modify dataverse listin
 
 Users interested in downloading metadata from archives other than Dataverse may be interested in Kurt Hornik's [OAIHarvester](http://cran.r-project.org/web/packages/OAIHarvester/index.html), which offers metadata download from any web repository that is compliant with the [Open Archives Initiative](http://www.openarchives.org/) standards. Additionally, [rdryad](http://cran.fhcrc.org/web/packages/rdryad/index.html) uses OAIHarvester to interface with [Dryad](http://datadryad.org/). The [rfigshare](http://cran.r-project.org/web/packages/rfigshare/) package works in a similar spirit to **dvn** with [http://figshare.com/](http://figshare.com/).
 
+---
 ## Installation ##
 
 You can find a stable release on [CRAN](http://cran.r-project.org/web/packages/dvn/index.html), or install the latest development version from GitHub using [Hadley's](http://had.co.nz/) [devtools](http://cran.r-project.org/web/packages/devtools/index.html) package:
 ```
 # install.packages("devtools")
 library(devtools)
-install_github(repo = "dvn", username = "leeper")
+install_github("leeper/dvn")
 ```
 
+---
 ## Functions for the Data Sharing API ##
 ### Metadata Search Functions ###
 * `dvSearch`, to search public dataverses
@@ -32,6 +34,7 @@ install_github(repo = "dvn", username = "leeper")
 * `dvDownloadInfo`, to retrieve information about a study file
 * `dvDownload`, to download a study file (if allowed)
 
+---
 ## Functions for the Data Deposit API ##
 
 The core workflow for the Data Deposit API involves creating a study listing using `dvCreateStudy`, adding one or more files with `dvAddFile`, and then making the study public with `dvReleaseStudy`. Use of all Data Deposit API functions requires a valid username and password for the selected Dataverse Network, which can be set in each function call or globally using `options(dvn.user = 'username', dvn.pwd = 'password')`.
@@ -41,6 +44,17 @@ The core workflow for the Data Deposit API involves creating a study listing usi
   * Use `dvEditStudy` to overwrite a study's metadata
 * `dvAddFile`, to add file(s) or active R dataframes to a study
 * `dvReleaseStudy`, to publicly release a study
+
+Here is simple code to enact that workflow:
+
+```
+options(dvn.user = 'username', dvn.pwd = 'password')
+doc <- dvServiceDoc()
+meta <- dvBuildMetadata(title="My Study", creator="Doe, John")
+study <- dvCreateStudy(doc, meta)
+dvAddFile(study, filename)
+dvReleaseStudy(study)
+```
 
 The following functions allow users to view and modify existing studies:
 * `dvDeleteFile`, to delete a file from a study
