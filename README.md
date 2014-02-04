@@ -1,6 +1,6 @@
 # R Access to the Dataverse Network #
 
-[![Build Status](https://travis-ci.org/leeper/dvn.png?branch=master)](https://travis-ci.org/leeper/dvn)
+[![Build Status](https://travis-ci.org/ropensci/dvn.png?branch=master)](https://travis-ci.org/ropensci/dvn)
 
 The **dvn** package for R integrates public data sharing into the reproducible research workflow. As such, **dvn** provides access to both the [Data Sharing API](http://guides.thedata.org/node/13328) and the [Data Deposit API](http://devguide.thedata.org/features/api/data-deposit/) for the [Dataverse Network](http://thedata.org/) online data repository system. The Data Sharing API enables searches of any public dataverse, returning study and file metadata. Limited support is also provided for data download, when terms of use allow direct download of public data.
 
