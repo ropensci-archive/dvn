@@ -3,6 +3,8 @@ function(   objectid, filename=NULL, dataframe=NULL, category=NULL, dv=getOption
             user=getOption('dvn.user'), pwd=getOption('dvn.pwd'), browser=FALSE, ...){
     if(inherits(objectid, 'dvStudyAtom'))
         objectid <- objectid$objectId
+    if(dvStudyStatement(objectid)$locked=='true')
+    	stop("Study is currently locked for editing")
     if(is.null(category))
         catdir <- file.path(normalizePath(tempdir(),winslash='/'),'Files')
     else{
