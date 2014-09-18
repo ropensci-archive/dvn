@@ -13,11 +13,15 @@ Users interested in downloading metadata from archives other than Dataverse may 
 ---
 ## Installation ##
 
-You can find a stable release on [CRAN](http://cran.r-project.org/web/packages/dvn/index.html), or install the latest development version from GitHub using [Hadley's](http://had.co.nz/) [devtools](http://cran.r-project.org/web/packages/devtools/index.html) package:
+You can find a stable release on [CRAN](http://cran.r-project.org/web/packages/dvn/index.html), or install the latest development version from GitHub using [Hadley's](http://had.co.nz/) [**devtools**](http://cran.r-project.org/web/packages/devtools/index.html) package:
+
 ```
-# install.packages("devtools")
-library(devtools)
-install_github("leeper/dvn")
+if(!require("devtools")){
+    install.packages("devtools")
+    library("devtools")
+}
+install_github("ropensci/dvn")
+library("dvn")
 ```
 
 ---
