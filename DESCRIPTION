@@ -1,11 +1,11 @@
 Package: dvn
-Version: 0.3.4
-Date: 2014-02-01
-Title: Access to The Dataverse Network APIs
+Version: 0.3.5
+Date: 2015-11-08
+Title: Access to Dataverse 3 APIs
 Author: Thomas J. Leeper
 Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
 Imports: RCurl, XML
-Description: Provides access to The Dataverse Network APIs via the RCurl package, enabling access to archived data (and metadata), and the ability to create and manipulate studies in a user's dataverse(s).
+Description: Provides access to Dataverse version 3 APIs, enabling access to archived data (and metadata), and the ability to create and manipulate studies in a user's dataverse(s).
 License: GPL-2
-URL: https://github.com/leeper/dvn
-BugReports: https://github.com/leeper/dvn/issues
+URL: https://github.com/ropensci/dvn
+BugReports: https://github.com/ropensci/dvn/issues

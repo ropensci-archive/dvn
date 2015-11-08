@@ -1,4 +1,4 @@
-# CHANGES TO dvn 0.4 #
+# CHANGES TO dvn 0.3.5 #
 
 ## SIGNIFICANT USER-VISIBLE CHANGES ##
 * All functions that require an `objectid` argument (e.g., all functions to deposit and release a dataverse study) now accept an object of class "dvStudyAtom" (e.g., returned by `dvCreateStudy`) in addition to the previously supported objectid as character string. This should simply the process of creating, editing, and releasing studies. (#20)
@@ -9,6 +9,9 @@
 * SSL_VERIFYHOST was disabled in a previous release due to a certificate issue. It has now been reactivated. (h/t Hadley Wickham)
 * Fixed a RCurl-related bug in `dvQuery` that prevented basic authentication for the Data Sharing API. `dvQuery` now uses username and password options, when specified, to authenticate requests.
 * New versions of libcurl (>7.28) deprecate boolean values for options (e.g., SSL_VERIFYPEER and SSL_VERIFYHOST). `dvQuery` and `dvDepositQuery` were returning errors due to this and has been updated. Everything is backwards compatible to earlier versions of libcurl.
+
+## DOCUMENTATION ##
+* Package is deprecated for use on legacy (version < 4.0) Dataverse installations. Links have been updated to reflect current location of development version of package and the new package ("dataverse") available at: https://github.com/IQSS/dataverse-client-r.
 
 
 # CHANGES TO dvn 0.3 #
