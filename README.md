@@ -23,6 +23,7 @@ if(!require("devtools")) {
     library("devtools")
 }
 install_github("ropensci/dvn")
+library("dvn")
 ```
 
 ---
@@ -68,3 +69,7 @@ The following functions allow users to view and modify existing studies:
 * `dvStudyStatement`, to access a summary of a study (including citation and stable URI)
 * `dvServiceDoc`, to identify the dataverse(s) accessible to a user (This is not particularly relevant to users with access to only one dataverse)
 * `dvStudyAtom`, to view study-level URIs for using the Data Deposit API (This is not important for most users, unless they plan to call `dvDepositQuery` directly)
+
+---
+
+[![](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
