@@ -1,7 +1,5 @@
 # R Access to the Dataverse Network #
 
-[![Build Status](https://travis-ci.org/leeper/dvn.png?branch=master)](https://travis-ci.org/leeper/dvn)
-
 The **dvn** package for R integrates public data sharing into the reproducible research workflow. As such, **dvn** provides access to both the [Data Sharing API](http://guides.thedata.org/node/13328) and the [Data Deposit API](http://devguide.thedata.org/features/api/data-deposit/) for the [Dataverse Network](http://thedata.org/) online data repository system. The Data Sharing API enables searches of any public dataverse, returning study and file metadata. Limited support is also provided for data download, when terms of use allow direct download of public data.
 
 The Data Deposit API allows users to directly create and modify dataverse listings (studies, metadata, and files), thereby integrating data archiving directly into the R workflow with just a few simple functions. The Data Deposit API is built on the [SWORD protocol](http://en.wikipedia.org/wiki/SWORD_%28protocol%29), though not all features are fully supported by the API.
@@ -13,11 +11,18 @@ Users interested in downloading metadata from archives other than Dataverse may 
 ---
 ## Installation ##
 
-You can find a stable release on [CRAN](http://cran.r-project.org/web/packages/dvn/index.html), or install the latest development version from GitHub using [Hadley's](http://had.co.nz/) [devtools](http://cran.r-project.org/web/packages/devtools/index.html) package:
-```
-# install.packages("devtools")
-library(devtools)
-install_github("leeper/dvn")
+[![CRAN Version](http://www.r-pkg.org/badges/version/dvn)](http://cran.r-project.org/package=dvn)
+![Downloads](http://cranlogs.r-pkg.org/badges/dvn)
+[![Build Status](https://travis-ci.org/ropensci/dvn.png?branch=master)](https://travis-ci.org/leeper/ropensci)
+
+You can find a stable release on [CRAN](http://cran.r-project.org/package=dvn), or install the latest development version from GitHub using [Hadley's](http://had.co.nz/) [devtools](http://cran.r-project.org/package=devtools) package:
+
+```R
+if(!require("devtools")) {
+    install.packages("devtools")
+    library("devtools")
+}
+install_github("ropensci/dvn")
 ```
 
 ---
