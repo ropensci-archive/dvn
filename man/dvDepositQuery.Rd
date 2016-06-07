@@ -15,7 +15,7 @@ dvDepositQuery( query, fulluri=NULL, dv=getOption('dvn'),
   \item{pwd}{A character string containing the corresponding dataverse password. Default is \code{options('dvn.pwd')}.}
   \item{browser}{A logical specifying whether the query should be executed in a web browser. Default is \code{FALSE}.}
   \item{apiversion}{A character string specifying the Data Deposit API version. Currently only \dQuote{v1} (the default).}
-  \item{httpverb}{A character string specifying one of \dQuote{GET} (the default), \dQuote{POST}, \dQuote{PUT}, or \dQuote{DELETE}. Not all verbs work on all SWORD URIs. See \href{http://dvn.github.io/devguide/features/api/data-deposit/}{Dataverse Developer's Guide}.}
+  \item{httpverb}{A character string specifying one of \dQuote{GET} (the default), \dQuote{POST}, \dQuote{PUT}, or \dQuote{DELETE}. Not all verbs work on all SWORD URIs.}
   \item{...}{Optionally, additional arguments passed to \code{curlPerform}.}
 }
 \details{Primarily for internal use.}

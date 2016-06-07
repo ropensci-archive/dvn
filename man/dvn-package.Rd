@@ -16,17 +16,6 @@ Thomas J. Leeper
 
 Maintainer: Thomas J. Leeper <thosjleeper@gmail.com>
 }
-\references{
-\href{http://switch.dl.sourceforge.net/project/dvn/dvn/3.0/dvnapi_v1_0.pdf}{Dataverse Data Sharing API Documentation}
-
-\href{http://dvn.github.io/devguide/features/api/data-deposit/}{Dataverse Data Deposit API Developer's Guide}
-
-\href{http://dvn.github.io/devguide/features/api/data-deposit/v1/}{Dataverse Data Deposit API v1 Developer's Guide}
-
-\href{http://thedata.org/}{The Dataverse Network}
-
-\href{http://thedata.harvard.edu/dvn/}{Harvard IQSS Dataverse}
-}
 \keyword{ package }
 %\seealso{}
 \examples{

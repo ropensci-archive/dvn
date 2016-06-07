@@ -30,13 +30,6 @@ Creating a study only changes the study in \dQuote{draft}. To make a study publi
   \item{objectId}{The \code{objectId} for the study.}
   \item{xml}{A character string containing an XML data structure that includes a study citation and handle.}
 }
-\references{
-\href{http://swordapp.github.io/SWORDv2-Profile/SWORDProfile.html\#protocoloperations_creatingresource_entry}{Atom entry specification}
-
-\href{https://github.com/IQSS/dvn/blob/develop/tools/scripts/data-deposit-api/atom-entry-study.xml}{Qualified Dublin Core XML example 1}
-
-\href{https://github.com/IQSS/dvn/blob/develop/tools/scripts/data-deposit-api/atom-entry-study2.xml}{Qualified Dublin Core XML example 2}
-}
 \author{Thomas J. Leeper}
 %\note{}
 \seealso{
