@@ -57,7 +57,7 @@ The following functions allow users to view and modify existing studies:
 
 [![CRAN Version](http://www.r-pkg.org/badges/version/dvn)](http://cran.r-project.org/package=dvn)
 ![Downloads](http://cranlogs.r-pkg.org/badges/dvn)
-[![Build Status](https://travis-ci.org/ropensci/dvn.png?branch=master)](https://travis-ci.org/leeper/ropensci)
+[![Build Status](https://travis-ci.org/ropensci/dvn.png?branch=master)](https://travis-ci.org/ropensci/ropensci)
 
 You can find a stable release on [CRAN](http://cran.r-project.org/package=dvn), or install the latest development version from GitHub using [Hadley's](http://had.co.nz/) [devtools](http://cran.r-project.org/package=devtools) package:
 
