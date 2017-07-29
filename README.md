@@ -1,4 +1,7 @@
-# R Access to the Dataverse Network #
+# dvn
+## R Access to the Dataverse Network #
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+![CRAN/GitHub 0.3.5_/_0.3.5](https://img.shields.io/badge/CRAN/GitHub-0.3.5_/_0.3.5-blue.svg)
 
 *Many dataverse servers now use Dataverse version 4.0 or greater. A separate package, [dataverse](https://github.com/IQSS/dataverse-client-r), is being developed to work with these newer installations.*
 
@@ -10,8 +13,32 @@ The Data Deposit API allows users to directly create and modify dataverse listin
 
 Users interested in downloading metadata from archives other than Dataverse may be interested in Kurt Hornik's [OAIHarvester](https://cran.r-project.org/package=OAIHarvester), which offers metadata download from any web repository that is compliant with the [Open Archives Initiative](http://www.openarchives.org/) standards. Additionally, [rdryad](https://cran.r-project.org/package=rdryad) uses OAIHarvester to interface with [Dryad](http://datadryad.org/). The [rfigshare](https://cran.r-project.org/package=rfigshare) package works in a similar spirit to **dvn** with [http://figshare.com/](http://figshare.com/).
 
-## Functions for the Data Sharing API ##
-### Metadata Search Functions ###
+
+## Package status and installation
+
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ropensci/dvn?branch=master&svg=true)](https://ci.appveyor.com/project/ropensci/dvn)
+[![Travis-CI Build Status](https://travis-ci.org/ropensci/dvn.svg?branch=master)](https://travis-ci.org/)
+ [![codecov](https://codecov.io/gh/ropensci/dvn/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/dvn)
+[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/dvn?color=blue)](https://github.com/metacran/cranlogs.app)
+
+__Installation instructions__
+
+__Stable Version__
+
+```r
+install.packages("dvn")
+```
+
+__Development Version__
+
+```r
+# install.packages("devtools")
+devtools::install_github("ropensci/dvn")
+```
+
+## Usage
+### Functions for the Data Sharing API ###
+#### Metadata Search Functions ####
 * `dvSearch`, to search public dataverses
   * `dvSearchFields`, to provide the searchable fields for use in `dvSearch`
 * `dvMetadata`, to retrieve the metadata for a study
@@ -19,11 +46,11 @@ Users interested in downloading metadata from archives other than Dataverse may 
   * `dvExtractFileIds`, to extract available files from the `dvMetadata` response
   * Using `dvTermsOfUse(dvMetadata(objectId))` displays Terms Of Use as HTML for the study
 
-### File Access Functions ###
+#### File Access Functions ####
 * `dvDownloadInfo`, to retrieve information about a study file
 * `dvDownload`, to download a study file (if allowed)
 
-## Functions for the Data Deposit API ##
+#### Functions for the Data Deposit API ####
 
 The core workflow for the Data Deposit API involves creating a study listing using `dvCreateStudy`, adding one or more files with `dvAddFile`, and then making the study public with `dvReleaseStudy`. Use of all Data Deposit API functions requires a valid username and password for the selected Dataverse Network, which can be set in each function call or globally using `options(dvn.user = 'username', dvn.pwd = 'password')`.
 
@@ -53,23 +80,16 @@ The following functions allow users to view and modify existing studies:
 * `dvStudyAtom`, to view study-level URIs for using the Data Deposit API (This is not important for most users, unless they plan to call `dvDepositQuery` directly)
 
 
-## Installation ##
+## Citation
 
-[![CRAN Version](http://www.r-pkg.org/badges/version/dvn)](http://cran.r-project.org/package=dvn)
-![Downloads](http://cranlogs.r-pkg.org/badges/dvn)
-[![Build Status](https://travis-ci.org/ropensci/dvn.png?branch=master)](https://travis-ci.org/ropensci/dvn)
+Get citation information for `dvn` in R by running: `citation(package = 'dvn')`
 
-You can find a stable release on [CRAN](http://cran.r-project.org/package=dvn), or install the latest development version from GitHub using [Hadley's](http://had.co.nz/) [devtools](http://cran.r-project.org/package=devtools) package:
+## Code of Conduct
 
-```R
-if (!require("devtools")) {
-    install.packages("devtools")
-    library("devtools")
-}
-install_github("ropensci/dvn")
-library("dvn")
-```
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md).
+By participating in this project you agree to abide by its terms.
 
----
+(Add this with `_use_code_of_conduct()`)
 
-[![](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+
+[![ropensci_footer](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
