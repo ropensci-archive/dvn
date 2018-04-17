@@ -16,11 +16,6 @@ Users interested in downloading metadata from archives other than Dataverse may 
 
 ## Package status and installation
 
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ropensci/dvn?branch=master&svg=true)](https://ci.appveyor.com/project/ropensci/dvn)
-[![Travis-CI Build Status](https://travis-ci.org/ropensci/dvn.svg?branch=master)](https://travis-ci.org/)
- [![codecov](https://codecov.io/gh/ropensci/dvn/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/dvn)
-[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/dvn?color=blue)](https://github.com/metacran/cranlogs.app)
-
 __Installation instructions__
 
 __Stable Version__
